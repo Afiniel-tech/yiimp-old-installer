@@ -177,66 +177,66 @@ default         0;
     sudo aptitude -y install fail2ban
     fi
     if [[ ("$UFW" == "y" || "$UFW" == "Y" || "$UFW" == "") ]]; then
-    sudo apt-get install ufw
-    sudo ufw default deny incoming
+    sudo apt-get install ufw >/dev/null 2>&1
+    sudo ufw default deny incoming 
     sudo ufw default allow outgoing
-    sudo ufw allow ssh
-    sudo ufw allow http
-    sudo ufw allow https
-    sudo ufw allow 3333/tcp
-    sudo ufw allow 3339/tcp
-    sudo ufw allow 3334/tcp
-    sudo ufw allow 3433/tcp
-    sudo ufw allow 3555/tcp
-    sudo ufw allow 3556/tcp
-    sudo ufw allow 3573/tcp
-    sudo ufw allow 3535/tcp
-    sudo ufw allow 3533/tcp
-    sudo ufw allow 3553/tcp
-    sudo ufw allow 3633/tcp
-    sudo ufw allow 3733/tcp
-    sudo ufw allow 3636/tcp
-    sudo ufw allow 3737/tcp
-    sudo ufw allow 3739/tcp
-    sudo ufw allow 3747/tcp
-    sudo ufw allow 3833/tcp
-    sudo ufw allow 3933/tcp
-    sudo ufw allow 4033/tcp
-    sudo ufw allow 4133/tcp
-    sudo ufw allow 4233/tcp
-    sudo ufw allow 4234/tcp
-    sudo ufw allow 4333/tcp
-    sudo ufw allow 4433/tcp
-    sudo ufw allow 4533/tcp
-    sudo ufw allow 4553/tcp
-    sudo ufw allow 4633/tcp
-    sudo ufw allow 4733/tcp
-    sudo ufw allow 4833/tcp
-    sudo ufw allow 4933/tcp
-    sudo ufw allow 5033/tcp
-    sudo ufw allow 5133/tcp
-    sudo ufw allow 5233/tcp
-    sudo ufw allow 5333/tcp
-    sudo ufw allow 5433/tcp
-    sudo ufw allow 5533/tcp
-    sudo ufw allow 5733/tcp
-    sudo ufw allow 5743/tcp
-    sudo ufw allow 3252/tcp
-    sudo ufw allow 5755/tcp
-    sudo ufw allow 5766/tcp
-    sudo ufw allow 5833/tcp
-    sudo ufw allow 5933/tcp
-    sudo ufw allow 6033/tcp
-    sudo ufw allow 5034/tcp
-    sudo ufw allow 6133/tcp
-    sudo ufw allow 6233/tcp
-    sudo ufw allow 6333/tcp
-    sudo ufw allow 6433/tcp
-    sudo ufw allow 7433/tcp
-    sudo ufw allow 8333/tcp
-    sudo ufw allow 8463/tcp
-    sudo ufw allow 8433/tcp
-    sudo ufw allow 8533/tcp
+    sudo ufw allow ssh >/dev/null 2>&1
+    sudo ufw allow http >/dev/null 2>&1
+    sudo ufw allow https >/dev/null 2>&1
+    sudo ufw allow 3333/tcp >/dev/null 2>&1
+    sudo ufw allow 3339/tcp >/dev/null 2>&1
+    sudo ufw allow 3334/tcp >/dev/null 2>&1
+    sudo ufw allow 3433/tcp >/dev/null 2>&1
+    sudo ufw allow 3555/tcp >/dev/null 2>&1
+    sudo ufw allow 3556/tcp >/dev/null 2>&1
+    sudo ufw allow 3573/tcp >/dev/null 2>&1
+    sudo ufw allow 3535/tcp >/dev/null 2>&1
+    sudo ufw allow 3533/tcp >/dev/null 2>&1 
+    sudo ufw allow 3553/tcp >/dev/null 2>&1
+    sudo ufw allow 3633/tcp >/dev/null 2>&1
+    sudo ufw allow 3733/tcp >/dev/null 2>&1
+    sudo ufw allow 3636/tcp >/dev/null 2>&1
+    sudo ufw allow 3737/tcp >/dev/null 2>&1
+    sudo ufw allow 3739/tcp >/dev/null 2>&1
+    sudo ufw allow 3747/tcp >/dev/null 2>&1
+    sudo ufw allow 3833/tcp >/dev/null 2>&1
+    sudo ufw allow 3933/tcp >/dev/null 2>&1
+    sudo ufw allow 4033/tcp >/dev/null 2>&1
+    sudo ufw allow 4133/tcp >/dev/null 2>&1
+    sudo ufw allow 4233/tcp >/dev/null 2>&1
+    sudo ufw allow 4234/tcp >/dev/null 2>&1
+    sudo ufw allow 4333/tcp >/dev/null 2>&1
+    sudo ufw allow 4433/tcp >/dev/null 2>&1
+    sudo ufw allow 4533/tcp >/dev/null 2>&1
+    sudo ufw allow 4553/tcp >/dev/null 2>&1
+    sudo ufw allow 4633/tcp >/dev/null 2>&1 
+    sudo ufw allow 4733/tcp >/dev/null 2>&1
+    sudo ufw allow 4833/tcp >/dev/null 2>&1
+    sudo ufw allow 4933/tcp >/dev/null 2>&1
+    sudo ufw allow 5033/tcp >/dev/null 2>&1
+    sudo ufw allow 5133/tcp >/dev/null 2>&1
+    sudo ufw allow 5233/tcp >/dev/null 2>&1
+    sudo ufw allow 5333/tcp >/dev/null 2>&1
+    sudo ufw allow 5433/tcp >/dev/null 2>&1
+    sudo ufw allow 5533/tcp >/dev/null 2>&1
+    sudo ufw allow 5733/tcp >/dev/null 2>&1
+    sudo ufw allow 5743/tcp >/dev/null 2>&1
+    sudo ufw allow 3252/tcp >/dev/null 2>&1
+    sudo ufw allow 5755/tcp >/dev/null 2>&1
+    sudo ufw allow 5766/tcp >/dev/null 2>&1
+    sudo ufw allow 5833/tcp >/dev/null 2>&1
+    sudo ufw allow 5933/tcp >/dev/null 2>&1
+    sudo ufw allow 6033/tcp >/dev/null 2>&1
+    sudo ufw allow 5034/tcp >/dev/null 2>&1
+    sudo ufw allow 6133/tcp >/dev/null 2>&1
+    sudo ufw allow 6233/tcp >/dev/null 2>&1
+    sudo ufw allow 6333/tcp >/dev/null 2>&1
+    sudo ufw allow 6433/tcp >/dev/null 2>&1
+    sudo ufw allow 7433/tcp >/dev/null 2>&1
+    sudo ufw allow 8333/tcp >/dev/null 2>&1
+    sudo ufw allow 8463/tcp >/dev/null 2>&1
+    sudo ufw allow 8433/tcp >/dev/null 2>&1
+    sudo ufw allow 8533/tcp >/dev/null 2>&1
     sudo ufw --force enable    
     fi
     
@@ -264,7 +264,7 @@ default         0;
     #Generating Random Password for stratum
     blckntifypass=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
     cd ~
-    git clone https://github.com/tpruvot/yiimp.git
+    git clone https://github.com/Kudaraidee/yiimp.git
     cd $HOME/yiimp/blocknotify
     sudo sed -i 's/tu8tu5/'$blckntifypass'/' blocknotify.cpp
     sudo make
