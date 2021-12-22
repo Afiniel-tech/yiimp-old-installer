@@ -44,11 +44,16 @@
 
     clear
     echo
-    echo -e "$GREEN*******************************************************************************$COL_RESET"
-    echo -e "$CYAN  yiimp-kawpow Install Script v0.3                                              $COL_RESET"
-    echo -e "$CYAN  Install yiimp-kawpow on Ubuntu 16.04/18.04 running Nginx, MariaDB, and php7.3 $COL_RESET"
-    echo -e "$GREEN*******************************************************************************$COL_RESET"
-    echo
+    echo -e "$GREEN********************************************************************************$COL_RESET"
+    echo -e "$CYAN  Afiniel-yiimp-kawpow Install Script v0.3                                       $COL_RESET"
+    echo -e "$GREEN********************************************************************************$COL_RESET"
+    echo -e "$GREEN  █████╗ ███████╗██╗███╗   ██╗██╗███████╗██╗                                    $COL_RESET"
+    echo -e "$GREEN ██╔══██╗██╔════╝██║████╗  ██║██║██╔════╝██║                                    $COL_RESET"
+    echo -e "$GREEN ███████║█████╗  ██║██╔██╗ ██║██║█████╗  ██║                                    $COL_RESET"
+    echo -e "$GREEN ██╔══██║██╔══╝  ██║██║╚██╗██║██║██╔══╝  ██║                                    $COL_RESET"
+    echo -e "$GREEN ██║  ██║██║     ██║██║ ╚████║██║███████╗███████╗                               $COL_RESET"
+    echo -e "$GREEN ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚══════╝                               $COL_RESET"
+    echo -e "$GREEN********************************************************************************$COL_RESET"
     sleep 3
 
 
