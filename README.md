@@ -1,19 +1,13 @@
-# Yiimp_install_scrypt v0.2 (update Avril, 2020)
+# Yiimp_install_scrypt v0.3 (update dec 2021-12-22)
 
-Site : https://www.xavatar.com
-
-Discord : https://discord.gg/zcCXjkQ
-
-TUTO Youtube (16.04 / 18.04 - Without SSL) : https://www.youtube.com/watch?v=qE0rhfJ1g2k
-
-Official Yiimp (used in this script for Yiimp Installation): https://github.com/tpruvot/yiimp
+Discord: <a href="https://discord.gg/DW3Upf4san"><img src="https://img.shields.io/discord/733027681184251937.svg?style=flat&label=Join%20Community&color=7289DA" alt="Join Community Badge"/></a>
 
 Original Yiimp Installer : https://github.com/cryptopool-builders/multipool_original_yiimp_installer
 
 
 ***********************************
 
-## Install script for yiimp on Ubuntu Server 16.04 / 18.04 (use Tpruvot's Yiimp)
+## Install script for Ubuntu 16.04 / 18.04 (Kudaraidee's Yiimp fork)
 
 USE THIS SCRIPT ON FRESH INSTALL UBUNTU Server 16.04 / 18.04 !
 
@@ -25,20 +19,16 @@ Connect on your VPS =>
 - log back in
 - su - pool
 - sudo apt -y install git
-- git clone https://github.com/xavatar/yiimp_install_scrypt.git
-- cd yiimp_install_scrypt/
-- bash install.sh (DO NOT RUN THE SCRIPT AS ROOT or SUDO)
+- git clone https://github.com/afiniel/Yiimp-install-Kudaraidee.git
+- cd  Yiimp_install_Kudaraidee
+- bash install.sh (Remember to be on your pool user Beforce you do Bash install.sh)
 - At the end, you MUST REBOOT to finalize installation...
 
 Finish !
 - Go http://xxx.xxx.xxx.xxx or https://xxx.xxx.xxx.xxx (if you have chosen LetsEncrypt SSL). Enjoy !
 - Go http://xxx.xxx.xxx.xxx/AdminPanel or https://xxx.xxx.xxx.xxx/AdminPanel to access Panel Admin
 
-If you are issue after installation (nginx,mariadb... not found), use this script : bash install-debug.sh (watch the log during installation)
-
-###### :bangbang: **Kudaraidee Install Script :**
-- Instead Tpruvot's Yiimp, you can use the Kudaraidee's Repo Yiimp : git clone -b Kudaraidee https://github.com/Kudaraidee/yiimp.git
-- It's an updated Yiimp, with more algo, some fix....
+If you have issue after installation (nginx,mariadb... not found), use this script : bash install-debug.sh (watch the log during installation)
 
 ###### :bangbang: **YOU MUST UPDATE THE FOLLOWING FILES :**
 - **/var/web/serverconfig.php :** update this file to include your public ip (line = YAAMP_ADMIN_IP) to access the admin panel (Put your PERSONNAL IP, NOT IP of your VPS). update with public keys from exchanges. update with other information specific to your server..
@@ -70,4 +60,6 @@ If you are issue after installation (nginx,mariadb... not found), use this scrip
 
 While I did add some server security to the script, it is every server owners responsibility to fully secure their own servers. After the installation you will still need to customize your serverconfig.php file to your liking, add your API keys, and build/add your coins to the control panel. 
 
-There will be several wallets already in yiimp. These have nothing to do with the installation script and are from the database import from the yiimp github. 
+There will be several wallets already in yiimp. These have nothing to do with the installation script and are from the database import from the yiimp github.
+
+# Happy Mining‼️
