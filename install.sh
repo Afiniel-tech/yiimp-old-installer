@@ -1,11 +1,11 @@
 #!/bin/bash
 ################################################################################
 # Original Author:   crombiecrunch
-# Modified by : Afiniel (https://github.com/afiniel/Yiimp-install-Kudaraidee)
+# Modified by : Afiniel (https://github.com/afiniel/yiimp-install-Kudaraidee)
 #    
 #
 # Program:
-#   Install yiimp on Ubuntu 16.04/18.04 running Nginx, MariaDB, and php7.3
+#   Install yiimp-kawpow on Ubuntu 16.04/18.04 running Nginx, MariaDB, and php7.3
 #   v0.3 (update dec 2021-12-22)
 # 
 ################################################################################
@@ -27,7 +27,7 @@
     #Add user group sudo + no password
     whoami=`whoami`
     sudo usermod -aG sudo ${whoami}
-    echo '# yiimp
+    echo '# yiimp-kawpow
     # It needs passwordless sudo functionality.
     '""''"${whoami}"''""' ALL=(ALL) NOPASSWD:ALL
     ' | sudo -E tee /etc/sudoers.d/${whoami} >/dev/null 2>&1
@@ -44,10 +44,10 @@
 
     clear
     echo
-    echo -e "$GREEN************************************************************************$COL_RESET"
-    echo -e "$CYAN  Yiimp Install Script v0.3                                              $COL_RESET"
-    echo -e "$CYAN  Install yiimp on Ubuntu 16.04/18.04 running Nginx, MariaDB, and php7.3 $COL_RESET"
-    echo -e "$GREEN************************************************************************$COL_RESET"
+    echo -e "$GREEN*******************************************************************************$COL_RESET"
+    echo -e "$CYAN  yiimp-kawpow Install Script v0.3                                              $COL_RESET"
+    echo -e "$CYAN  Install yiimp-kawpow on Ubuntu 16.04/18.04 running Nginx, MariaDB, and php7.3 $COL_RESET"
+    echo -e "$GREEN*******************************************************************************$COL_RESET"
     echo
     sleep 3
 
@@ -131,7 +131,7 @@
     # Installing Mariadb
     echo
     echo
-    echo -e "$CYAN => Installing Mariadb Server : $COL_RESET"
+    echo -e "$CYAN => Installing MariaDB-Server : $COL_RESET"
     echo
     sleep 3
         
@@ -144,7 +144,7 @@
     sleep 5
     sudo systemctl status mysql | sed -n "1,3p"
     echo
-    echo -e "$GREEN Done...$COL_RESET"
+    echo -e "$GREEN Sussessfully installed MariaDB-server...$COL_RESET"
 
     
     # Installing Installing php7.3
@@ -164,39 +164,38 @@
     apt_install php7.3-fpm php7.3-opcache php7.3 php7.3-common php7.3-gd php7.3-mysql php7.3-imap php7.3-cli \
     php7.3-cgi php-pear php-auth imagemagick libruby php7.3-curl php7.3-intl php7.3-pspell mcrypt\
     php7.3-recode php7.3-sqlite3 php7.3-tidy php7.3-xmlrpc php7.3-xsl memcached php-memcache php-imagick php-gettext php7.3-zip php7.3-mbstring php7.3-memcache php7.3-memcached
-    #hide_output sudo phpenmod mcrypt
-    #hide_output sudo phpenmod mbstring
+    
     else
     apt_install php7.3-fpm php7.3-opcache php7.3 php7.3-common php7.3-gd php7.3-mysql php7.3-imap php7.3-cli \
     php7.3-cgi php-pear imagemagick libruby php7.3-curl php7.3-intl php7.3-pspell mcrypt\
     php7.3-recode php7.3-sqlite3 php7.3-tidy php7.3-xmlrpc php7.3-xsl memcached php-memcache php-imagick php-gettext php7.3-zip php7.3-mbstring \
-    libpsl-dev libnghttp2-dev
+    libpsl-dev libnghttp2-dev php7.3-memcache php7.3-memcached
     fi
     sleep 5
     hide_output sudo systemctl start php7.3-fpm
     sudo systemctl status php7.3-fpm | sed -n "1,3p"
     echo
-    echo -e "$GREEN Done...$COL_RESET"
+    echo -e "$GREEN Sussessfully installed php7.3..$COL_RESET"
 
     
     # Installing other needed files
     echo
     echo
-    echo -e "$CYAN => Installing other needed files : $COL_RESET"
+    echo -e "$CYAN => Installing Required packages : $COL_RESET"
     echo
     sleep 3
     
     apt_install libgmp3-dev libmysqlclient-dev libcurl4-gnutls-dev libkrb5-dev libldap2-dev libidn11-dev gnutls-dev \
     librtmp-dev sendmail mutt screen git
     apt_install pwgen -y
-    echo -e "$GREEN Done...$COL_RESET"
+    echo -e "$GREEN Sussessfully installed Required packages...$COL_RESET"
 	sleep 3
 
     
-    # Installing Package to compile crypto currency
+    # Installing Package to Compile crypto currency
     echo
     echo
-    echo -e "$CYAN => Installing Package to compile crypto currency $COL_RESET"
+    echo -e "$CYAN => Installing Package to Compile crypto currency $COL_RESET"
     echo
     sleep 3
     
@@ -204,11 +203,11 @@
     apt_install libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils git cmake libboost-all-dev zlib1g-dev libz-dev libseccomp-dev libcap-dev libminiupnpc-dev gettext
     apt_install libminiupnpc10 libzmq5
     apt_install libcanberra-gtk-module libqrencode-dev libzmq3-dev
-    apt_install libqt5gui5 libqt5core5a libqt5webkit5-dev libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
+    apt_install libqt5gui5 libqt5core5a libqt5webkit5-dev libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-Compiler
     hide_output sudo add-apt-repository -y ppa:bitcoin/bitcoin
     hide_output sudo apt -y update
     apt_install libdb4.8-dev libdb4.8++-dev libdb5.3 libdb5.3++
-    echo -e "$GREEN Done...$COL_RESET"
+    echo -e "$GREEN Sussessfully installed Required crypto Compile packages...$COL_RESET"
        
     
     # Generating Random Passwords
@@ -236,10 +235,10 @@
         sudo sendmail -s "SMTP Testing" $root_email < sudo tee --append /tmp/email.message
 
         sudo rm -f /tmp/email.message
-        echo "Mail sent"
+        echo "Mail sent!"
     fi
     fi
-    echo -e "$GREEN Done...$COL_RESET"
+    echo -e "$GREEN Sussessfully sent email...$COL_RESET"
     
     # Installing Fail2Ban & UFW
     echo
@@ -324,7 +323,7 @@
 
     
     echo
-    echo -e "$GREEN Done...$COL_RESET"
+    echo -e "$GREEN Sussess!...$COL_RESET"
 
     
     # Installing PhpMyAdmin
@@ -341,15 +340,15 @@
     echo "phpmyadmin phpmyadmin/mysql/app-pass password $AUTOGENERATED_PASS" | sudo debconf-set-selections
     echo "phpmyadmin phpmyadmin/app-password-confirm password $AUTOGENERATED_PASS" | sudo debconf-set-selections
     apt_install phpmyadmin
-    echo -e "$GREEN Done...$COL_RESET"
+    echo -e "$GREEN Sussessfully installed phpMyAdmin...$COL_RESET"
 	
 	
-    # Installing Yiimp
+    # Installing yiimp-kawpow
     echo
     echo
-    echo -e "$CYAN => Installing Yiimp $COL_RESET"
+    echo -e "$CYAN => Installing yiimp-kawpow $COL_RESET"
     echo
-    echo -e "Grabbing yiimp fron Github, building files and setting file structure."
+    echo -e "Grabbing yiimp-kawpow fron Github, building files and setting file structure."
     echo
     sleep 3
     
@@ -357,42 +356,42 @@
     # Generating Random Password for stratum
     blckntifypass=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
     
-    # Compil Blocknotify
+    # Compile Blocknotify
     cd ~
-    hide_output git clone https://github.com/tpruvot/yiimp
-    cd $HOME/yiimp/blocknotify
+    hide_output git clone -b kawpow https://github.com/afiniel/yiimp-kawpow-kawpow.git
+    cd $HOME/yiimp-kawpow/blocknotify
     sudo sed -i 's/tu8tu5/'$blckntifypass'/' blocknotify.cpp
     hide_output sudo make
     
-    # Compil iniparser
-    cd $HOME/yiimp/stratum/iniparser
+    # Compile iniparser
+    cd $HOME/yiimp-kawpow/stratum/iniparser
     hide_output sudo make
     
-    # Compil Stratum
-    cd $HOME/yiimp/stratum
+    # Compile Stratum
+    cd $HOME/yiimp-kawpow/stratum
     if [[ ("$BTC" == "y" || "$BTC" == "Y") ]]; then
-    sudo sed -i 's/CFLAGS += -DNO_EXCHANGE/#CFLAGS += -DNO_EXCHANGE/' $HOME/yiimp/stratum/Makefile
+    sudo sed -i 's/CFLAGS += -DNO_EXCHANGE/#CFLAGS += -DNO_EXCHANGE/' $HOME/yiimp-kawpow/stratum/Makefile
     fi
     hide_output sudo make
     
     # Copy Files (Blocknotify,iniparser,Stratum)
-    cd $HOME/yiimp
-    sudo sed -i 's/AdminRights/'AdminPanel'/' $HOME/yiimp/web/yaamp/modules/site/SiteController.php
-    sudo cp -r $HOME/yiimp/web /var/
+    cd $HOME/yiimp-kawpow
+    sudo sed -i 's/AdminRights/'AdminPanel'/' $HOME/yiimp-kawpow/web/yaamp/modules/site/SiteController.php
+    sudo cp -r $HOME/yiimp-kawpow/web /var/
     sudo mkdir -p /var/stratum
-    cd $HOME/yiimp/stratum
+    cd $HOME/yiimp-kawpow/stratum
     sudo cp -a config.sample/. /var/stratum/config
     sudo cp -r stratum /var/stratum
     sudo cp -r run.sh /var/stratum
-    cd $HOME/yiimp
-    sudo cp -r $HOME/yiimp/bin/. /bin/
-    sudo cp -r $HOME/yiimp/blocknotify/blocknotify /usr/bin/
-    sudo cp -r $HOME/yiimp/blocknotify/blocknotify /var/stratum/
-    sudo mkdir -p /etc/yiimp
+    cd $HOME/yiimp-kawpow
+    sudo cp -r $HOME/yiimp-kawpow/bin/. /bin/
+    sudo cp -r $HOME/yiimp-kawpow/blocknotify/blocknotify /usr/bin/
+    sudo cp -r $HOME/yiimp-kawpow/blocknotify/blocknotify /var/stratum/
+    sudo mkdir -p /etc/yiimp-kawpow
     sudo mkdir -p /$HOME/backup/
-    #fixing yiimp
-    sudo sed -i "s|ROOTDIR=/data/yiimp|ROOTDIR=/var|g" /bin/yiimp
-    #fixing run.sh
+    #Fixing yiimp-kawpow
+    sudo sed -i "s|ROOTDIR=/data/yiimp-kawpow|ROOTDIR=/var|g" /bin/yiimp-kawpow
+    #Fixing run.sh
     sudo rm -r /var/stratum/config/run.sh
     echo '
     #!/bin/bash
@@ -407,7 +406,7 @@
     ' | sudo -E tee /var/stratum/config/run.sh >/dev/null 2>&1
     sudo chmod +x /var/stratum/config/run.sh
 
-    echo -e "$GREEN Done...$COL_RESET"
+    echo -e "$GREEN Sussessfully installed Yiimp-kawpow...$COL_RESET"
 
 
     # Update Timezone
@@ -867,7 +866,7 @@
     sleep 3
     
     # Create database
-    Q1="CREATE DATABASE IF NOT EXISTS yiimpfrontend;"
+    Q1="CREATE DATABASE IF NOT EXISTS yiimp-kawpowfrontend;"
     Q2="GRANT ALL ON *.* TO 'panel'@'localhost' IDENTIFIED BY '$password';"
     Q3="FLUSH PRIVILEGES;"
     SQL="${Q1}${Q2}${Q3}"
@@ -885,12 +884,12 @@
     [clienthost1]
     user=panel
     password='"${password}"'
-    database=yiimpfrontend
+    database=yiimp-kawpowfrontend
     host=localhost
     [clienthost2]
     user=stratum
     password='"${password2}"'
-    database=yiimpfrontend
+    database=yiimp-kawpowfrontend
     host=localhost
     [myphpadmin]
     user=phpmyadmin
@@ -905,10 +904,10 @@
     # Create keys file
     echo '  
     <?php
-    /* Sample config file to put in /etc/yiimp/keys.php */
-    define('"'"'YIIMP_MYSQLDUMP_USER'"'"', '"'"'panel'"'"');
-    define('"'"'YIIMP_MYSQLDUMP_PASS'"'"', '"'"''"${password}"''"'"');
-    define('"'"'YIIMP_MYSQLDUMP_PATH'"'"', '"'"''"/var/yiimp/sauv"''"'"');
+    /* Sample config file to put in /etc/yiimp-kawpow/keys.php */
+    define('"'"'yiimp-kawpow_MYSQLDUMP_USER'"'"', '"'"'panel'"'"');
+    define('"'"'yiimp-kawpow_MYSQLDUMP_PASS'"'"', '"'"''"${password}"''"'"');
+    define('"'"'yiimp-kawpow_MYSQLDUMP_PATH'"'"', '"'"''"/var/yiimp-kawpow/sauv"''"'"');
     /* Keys required to create/cancel orders and access your balances/deposit addresses */
     define('"'"'EXCH_BITTREX_SECRET'"'"', '"'"''"'"');
     define('"'"'EXCH_BITSTAMP_SECRET'"'"','"'"''"'"');
@@ -924,7 +923,7 @@
     define('"'"'EXCH_NOVA_SECRET'"'"','"'"''"'"');
     define('"'"'EXCH_POLONIEX_SECRET'"'"', '"'"''"'"');
     define('"'"'EXCH_YOBIT_SECRET'"'"', '"'"''"'"');
-    ' | sudo -E tee /etc/yiimp/keys.php >/dev/null 2>&1
+    ' | sudo -E tee /etc/yiimp-kawpow/keys.php >/dev/null 2>&1
 
  	echo -e "$GREEN Done...$COL_RESET"
 
@@ -932,14 +931,14 @@
     # Peforming the SQL import
     echo
     echo
-    echo -e "$CYAN => Database 'yiimpfrontend' and users 'panel' and 'stratum' created with password $password and $password2, will be saved for you $COL_RESET"
+    echo -e "$CYAN => Database 'yiimp-kawpow-frontend' and users 'panel' and 'stratum' created with password $password and $password2, will be saved for you $COL_RESET"
     echo
     echo -e "Performing the SQL import"
     echo
     sleep 3
     
     cd ~
-    cd yiimp/sql
+    cd yiimp-kawpow/sql
     
     # Import sql dump
     sudo zcat 2016-04-03-yaamp.sql.gz | sudo mysql --defaults-group-suffix=host1
@@ -965,10 +964,10 @@
     echo -e "$GREEN Done...$COL_RESET"
         
     
-    # Generating a basic Yiimp serverconfig.php
+    # Generating a basic yiimp-kawpow serverconfig.php
     echo
     echo
-    echo -e "$CYAN => Generating a basic Yiimp serverconfig.php $COL_RESET"
+    echo -e "$CYAN => Generating a basic serverconfig.php $COL_RESET"
     echo
     sleep 3
     
@@ -978,13 +977,13 @@
 
     ini_set('"'"'date.timezone'"'"', '"'"'UTC'"'"');
 
-    define('"'"'YAAMP_LOGS'"'"', '"'"'/var/log/yiimp'"'"');
+    define('"'"'YAAMP_LOGS'"'"', '"'"'/var/log/yiimp-kawpow'"'"');
     define('"'"'YAAMP_HTDOCS'"'"', '"'"'/var/web'"'"');
         
     define('"'"'YAAMP_BIN'"'"', '"'"'/var/bin'"'"');
     
     define('"'"'YAAMP_DBHOST'"'"', '"'"'localhost'"'"');
-    define('"'"'YAAMP_DBNAME'"'"', '"'"'yiimpfrontend'"'"');
+    define('"'"'YAAMP_DBNAME'"'"', '"'"'yiimp-kawpowfrontend'"'"');
     define('"'"'YAAMP_DBUSER'"'"', '"'"'panel'"'"');
     define('"'"'YAAMP_DBPASSWORD'"'"', '"'"''"${password}"''"'"');
     
@@ -1002,17 +1001,17 @@
     define('"'"'YAAMP_PAYMENTS_MINI'"'"', 0.001);
     
     define('"'"'YAAMP_ALLOW_EXCHANGE'"'"', false);
-    define('"'"'YIIMP_PUBLIC_EXPLORER'"'"', true);
-    define('"'"'YIIMP_PUBLIC_BENCHMARK'"'"', false);
+    define('"'"'yiimp-kawpow_PUBLIC_EXPLORER'"'"', true);
+    define('"'"'yiimp-kawpow_PUBLIC_BENCHMARK'"'"', false);
     
-    define('"'"'YIIMP_FIAT_ALTERNATIVE'"'"', '"'"'USD'"'"'); // USD is main
+    define('"'"'yiimp-kawpow_FIAT_ALTERNATIVE'"'"', '"'"'USD'"'"'); // USD is main
     define('"'"'YAAMP_USE_NICEHASH_API'"'"', false);
     
-    define('"'"'YAAMP_BTCADDRESS'"'"', '"'"'1C1hnjk3WhuAvUN6Ny6LTxPD3rwSZwapW7'"'"');
+    define('"'"'YAAMP_BTCADDRESS'"'"', '"'"'YOUR-BTC-WALLET-HERE'"'"');
     
     define('"'"'YAAMP_SITE_URL'"'"', '"'"''"${server_name}"''"'"');
     define('"'"'YAAMP_STRATUM_URL'"'"', YAAMP_SITE_URL); // change if your stratum server is on a different host
-    define('"'"'YAAMP_SITE_NAME'"'"', '"'"'YIIMP'"'"');
+    define('"'"'YAAMP_SITE_NAME'"'"', '"'"'Afiniel'"'"');
     define('"'"'YAAMP_ADMIN_EMAIL'"'"', '"'"''"${EMAIL}"''"'"');
     define('"'"'YAAMP_ADMIN_IP'"'"', '"'"''"${Public}"''"'"'); // samples: "80.236.118.26,90.234.221.11" or "10.0.0.1/8"
     
@@ -1072,7 +1071,7 @@
     );
     ' | sudo -E tee /var/web/serverconfig.php >/dev/null 2>&1
 
-    echo -e "$GREEN Done...$COL_RESET"
+    echo -e "$GREEN Serverconfig.php Created...$COL_RESET"
 
 
     # Updating stratum config files with database connection info
@@ -1086,7 +1085,7 @@
     sudo sed -i 's/password = tu8tu5/password = '$blckntifypass'/g' *.conf
     sudo sed -i 's/server = yaamp.com/server = '$server_name'/g' *.conf
     sudo sed -i 's/host = yaampdb/host = localhost/g' *.conf
-    sudo sed -i 's/database = yaamp/database = yiimpfrontend/g' *.conf
+    sudo sed -i 's/database = yaamp/database = yiimp-kawpowfrontend/g' *.conf
     sudo sed -i 's/username = root/username = stratum/g' *.conf
     sudo sed -i 's/password = patofpaq/password = '$password2'/g' *.conf
     cd ~
@@ -1109,17 +1108,17 @@
     sudo chgrp www-data /var/web -R
     sudo chmod g+w /var/web -R
     
-    sudo mkdir /var/log/yiimp
-    sudo touch /var/log/yiimp/debug.log
-    sudo chgrp www-data /var/log/yiimp -R
-    sudo chmod 775 /var/log/yiimp -R
+    sudo mkdir /var/log/yiimp-kawpow
+    sudo touch /var/log/yiimp-kawpow/debug.log
+    sudo chgrp www-data /var/log/yiimp-kawpow -R
+    sudo chmod 775 /var/log/yiimp-kawpow -R
     
     sudo chgrp www-data /var/stratum -R
     sudo chmod 775 /var/stratum
 
-    sudo mkdir -p /var/yiimp/sauv
-    sudo chgrp www-data /var/yiimp -R
-    sudo chmod 775 /var/yiimp -R
+    sudo mkdir -p /var/yiimp-kawpow/sauv
+    sudo chgrp www-data /var/yiimp-kawpow -R
+    sudo chmod 775 /var/yiimp-kawpow -R
 
 
     #Add to contrab screen-scrypt
@@ -1130,11 +1129,11 @@
     sudo sed -i 's/service nginx stop/sudo service nginx stop/g' /var/web/yaamp/modules/thread/CronjobController.php
 
     #fix error screen main "backup sql frontend"
-    sudo sed -i "s|/root/backup|/var/yiimp/sauv|g" /var/web/yaamp/core/backend/system.php
+    sudo sed -i "s|/root/backup|/var/yiimp-kawpow/sauv|g" /var/web/yaamp/core/backend/system.php
     sudo sed -i '14d' /var/web/yaamp/defaultconfig.php
 
     #Misc
-    sudo mv $HOME/yiimp/ $HOME/yiimp-install-only-do-not-run-commands-from-this-folder
+    sudo mv $HOME/yiimp-kawpow/ $HOME/yiimp-kawpow-install-only-do-not-run-commands-from-this-folder
     sudo rm -rf /var/log/nginx/*
     
     #Hold update OpenSSL
@@ -1159,7 +1158,7 @@
     echo
     echo
     echo -e "$GREEN***************************$COL_RESET"
-    echo -e "$GREEN Yiimp Install Script v0.2 $COL_RESET"
+    echo -e "$GREEN yiimp-kawpow Install Script v0.2 $COL_RESET"
     echo -e "$GREEN Finish !!! $COL_RESET"
     echo -e "$GREEN***************************$COL_RESET"
     echo 
@@ -1168,21 +1167,18 @@
     echo -e "$CYAN Whew that was fun, just some reminders. $COL_RESET" 
     echo -e "$RED Your mysql information is saved in ~/.my.cnf. $COL_RESET"
     echo
-    echo -e "$RED Yiimp at : http://"$server_name" (https... if SSL enabled)"
-    echo -e "$RED Yiimp Admin at : http://"$server_name"/site/AdminPanel (https... if SSL enabled)"
-    echo -e "$RED Yiimp phpMyAdmin at : http://"$server_name"/phpmyadmin (https... if SSL enabled)"
+    echo -e "$RED yiimp-kawpow at : http://"$server_name" (https... if SSL enabled)"
+    echo -e "$RED yiimp-kawpow Admin at : http://"$server_name"/site/AdminPanel (https... if SSL enabled)"
+    echo -e "$RED yiimp-kawpow phpMyAdmin at : http://"$server_name"/phpmyadmin (https... if SSL enabled)"
     echo
     echo -e "$RED If you want change 'AdminPanel' to access Panel Admin : Edit this file : /var/web/yaamp/modules/site/SiteController.php"
     echo -e "$RED Line 11 => change 'AdminPanel' and use the new address"
     echo
     echo -e "$CYAN Please make sure to change your public keys / wallet addresses in the /var/web/serverconfig.php file. $COL_RESET"
-    echo -e "$CYAN Please make sure to change your private keys in the /etc/yiimp/keys.php file. $COL_RESET"
-    echo
-    echo -e "$CYAN TUTO Youtube : https://www.youtube.com/watch?v=qE0rhfJ1g2k $COL_RESET"
-    echo -e "$CYAN Xavatar WebSite : https://www.xavatar.com $COL_RESET"
-    echo
+    echo -e "$CYAN Please make sure to change your private keys in the /etc/yiimp-kawpow/keys.php file. $COL_RESET"
     echo
     echo -e "$RED***************************************************$COL_RESET"
+    echo -e "$RED 𝐻𝒶𝓅𝓅𝓎 𝑀𝒾𝓃𝒾𝓃𝑔!                                  $COL_RESET"
     echo -e "$RED YOU MUST REBOOT NOW  TO FINALIZE INSTALLATION !!! $COL_RESET"
     echo -e "$RED***************************************************$COL_RESET"
     echo
