@@ -18,11 +18,11 @@ Original Yiimp Installer : https://github.com/cryptopool-builders/multipool_orig
 USE THIS SCRIPT ON FRESH INSTALL UBUNTU Server 16.04 / 18.04 !
 
 Connect on your VPS =>
-- apt update
-- apt upgrade
-- reboot
+- sudo apt-get update && sudo apt-get upgrade -y
 - adduser pool (pool it's just an example...)
 - adduser pool sudo
+- sudo reboot
+- log back in
 - su - pool
 - sudo apt -y install git
 - git clone https://github.com/xavatar/yiimp_install_scrypt.git
@@ -71,10 +71,3 @@ If you are issue after installation (nginx,mariadb... not found), use this scrip
 While I did add some server security to the script, it is every server owners responsibility to fully secure their own servers. After the installation you will still need to customize your serverconfig.php file to your liking, add your API keys, and build/add your coins to the control panel. 
 
 There will be several wallets already in yiimp. These have nothing to do with the installation script and are from the database import from the yiimp github. 
-
-If you need further assistance we have a small but growing discord channel at https://discord.gg/zcCXjkQ
-
-If this helped you or you feel giving please donate : 
-- BTC Donation : 1C1hnjk3WhuAvUN6Ny6LTxPD3rwSZwapW7
-- BCH Donation : 1PqjApUdjwU9k4v1RDWf6XveARyEXaiGUz
-- ETH Donation : 0xc23E6902fF8Cd8878EDADE18Dc49B3505395F0a1
