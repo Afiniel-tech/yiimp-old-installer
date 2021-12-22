@@ -180,7 +180,7 @@
     hide_output sudo systemctl start php7.3-fpm
     sudo systemctl status php7.3-fpm | sed -n "1,3p"
     echo
-    echo -e "$GREEN Sussessfully installed php7.3..$COL_RESET"
+    echo -e "$GREEN Sussessfully installed php7.3$COL_RESET"
 
     
     # Installing other needed files
@@ -200,7 +200,7 @@
     # Installing Package to Compile crypto currency
     echo
     echo
-    echo -e "$CYAN => Installing Package to Compile crypto currency $COL_RESET"
+    echo -e "$CYAN => Installing Package to Compile crypto currency. $COL_RESET"
     echo
     sleep 3
     
