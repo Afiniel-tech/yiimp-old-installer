@@ -44,16 +44,16 @@
 
     clear
     echo
-    echo -e "$GREEN********************************************************************************$COL_RESET"
-    echo -e "$CYAN  Afiniel-yiimp-kawpow Install Script v0.3                                       $COL_RESET"
-    echo -e "$GREEN********************************************************************************$COL_RESET"
-    echo -e "$GREEN  █████╗ ███████╗██╗███╗   ██╗██╗███████╗██╗                                    $COL_RESET"
-    echo -e "$GREEN ██╔══██╗██╔════╝██║████╗  ██║██║██╔════╝██║                                    $COL_RESET"
-    echo -e "$GREEN ███████║█████╗  ██║██╔██╗ ██║██║█████╗  ██║                                    $COL_RESET"
-    echo -e "$GREEN ██╔══██║██╔══╝  ██║██║╚██╗██║██║██╔══╝  ██║                                    $COL_RESET"
-    echo -e "$GREEN ██║  ██║██║     ██║██║ ╚████║██║███████╗███████╗                               $COL_RESET"
-    echo -e "$GREEN ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚══════╝                               $COL_RESET"
-    echo -e "$GREEN********************************************************************************$COL_RESET"
+    echo -e "$GREEN***************************************************$COL_RESET"
+    echo -e "$CYAN * Afiniel-yiimp-kawpow Install Script v0.3        *$COL_RESET"
+    echo -e "$CYAN * Afiniel-yiimp-kawpow Install Script v0.3        *$COL_RESET"
+    echo -e "$GREEN*  █████╗ ███████╗██╗███╗   ██╗██╗███████╗██╗     *$COL_RESET"
+    echo -e "$GREEN* ██╔══██╗██╔════╝██║████╗  ██║██║██╔════╝██║     *$COL_RESET"
+    echo -e "$GREEN* ███████║█████╗  ██║██╔██╗ ██║██║█████╗  ██║     *$COL_RESET"
+    echo -e "$GREEN* ██╔══██║██╔══╝  ██║██║╚██╗██║██║██╔══╝  ██║     *$COL_RESET"
+    echo -e "$GREEN* ██║  ██║██║     ██║██║ ╚████║██║███████╗███████╗*$COL_RESET"
+    echo -e "$GREEN* ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚══════╝*$COL_RESET"
+    echo -e "$GREEN***************************************************$COL_RESET"
     sleep 3
 
 
