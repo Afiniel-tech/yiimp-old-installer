@@ -116,7 +116,7 @@
     hide_output sudo systemctl start cron.service
     hide_output sudo systemctl enable cron.service
     sleep 5
-    sudo systemctl status nginx | sed -n "1,3p"
+    hide_output sudo systemctl status nginx | sed -n "1,3p"
     echo
     echo -e "$GREEN Done...$COL_RESET"
 	
@@ -147,7 +147,7 @@
     hide_output sudo systemctl start mysql
     hide_output sudo systemctl enable mysql
     sleep 5
-    sudo systemctl status mysql | sed -n "1,3p"
+    hide_output sudo systemctl status mysql | sed -n "1,3p"
     echo
     echo -e "$GREEN Sussessfully installed MariaDB-server...$COL_RESET"
 
@@ -178,7 +178,7 @@
     fi
     sleep 5
     hide_output sudo systemctl start php7.3-fpm
-    sudo systemctl status php7.3-fpm | sed -n "1,3p"
+    hide_output sudo systemctl status php7.3-fpm | sed -n "1,3p"
     echo
     echo -e "$GREEN Sussessfully installed php7.3$COL_RESET"
 
@@ -256,7 +256,7 @@
     if [[ ("$install_fail2ban" == "y" || "$install_fail2ban" == "Y" || "$install_fail2ban" == "") ]]; then
     apt_install fail2ban
     sleep 5
-    sudo systemctl status fail2ban | sed -n "1,3p"
+    hide_output sudo systemctl status fail2ban | sed -n "1,3p"
         fi
 
 
@@ -363,7 +363,7 @@
     
     # Compile Blocknotify
     cd ~
-    git clone -b kawpow https://github.com/afiniel/yiimp-kawpow-kawpow.git
+    git clone https://github.com/Kudaraidee/yiimp.git -b kawpow
     cd $HOME/yiimp-kawpow/blocknotify
     sudo sed -i 's/tu8tu5/'$blckntifypass'/' blocknotify.cpp
     hide_output sudo make
@@ -1183,8 +1183,7 @@
     echo -e "$CYAN Please make sure to change your private keys in the /etc/yiimp-kawpow/keys.php file. $COL_RESET"
     echo
     echo -e "$RED***************************************************$COL_RESET"
-    echo -e "$RED 𝐻𝒶𝓅𝓅𝓎 𝑀𝒾𝓃𝒾𝓃𝑔!                                  $COL_RESET"
     echo -e "$RED YOU MUST REBOOT NOW  TO FINALIZE INSTALLATION !!! $COL_RESET"
     echo -e "$RED***************************************************$COL_RESET"
-    echo
+    echo -e "$RED 𝐻𝒶𝓅𝓅𝓎 𝑀𝒾𝓃𝒾𝓃𝑔!                                  $COL_RESET"
     echo
