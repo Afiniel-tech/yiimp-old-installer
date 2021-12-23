@@ -363,7 +363,7 @@
     
     # Compile Blocknotify
     cd ~
-    hide_output git clone -b kawpow https://github.com/afiniel/yiimp-kawpow-kawpow.git
+    git clone -b kawpow https://github.com/afiniel/yiimp-kawpow-kawpow.git
     cd $HOME/yiimp-kawpow/blocknotify
     sudo sed -i 's/tu8tu5/'$blckntifypass'/' blocknotify.cpp
     hide_output sudo make
