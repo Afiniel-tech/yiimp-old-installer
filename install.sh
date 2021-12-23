@@ -322,7 +322,7 @@
     hide_output sudo ufw allow 8533/tcp
     hide_output sudo ufw --force enable
     sleep 5
-    sudo systemctl status ufw | sed -n "1,3p"   
+    hide_output sudo systemctl status ufw | sed -n "1,3p"   
     fi
 
     
