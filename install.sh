@@ -45,7 +45,6 @@
     clear
     echo
     echo -e "$GREEN***************************************************$COL_RESET"
-    echo -e "$GREEN* Afiniel-yiimp Install Script v0.3               *$COL_RESET"
     echo -e "$GREEN*  █████╗ ███████╗██╗███╗   ██╗██╗███████╗██╗     *$COL_RESET"
     echo -e "$GREEN* ██╔══██╗██╔════╝██║████╗  ██║██║██╔════╝██║     *$COL_RESET"
     echo -e "$GREEN* ███████║█████╗  ██║██╔██╗ ██║██║█████╗  ██║     *$COL_RESET"
@@ -53,6 +52,7 @@
     echo -e "$GREEN* ██║  ██║██║     ██║██║ ╚████║██║███████╗███████╗*$COL_RESET"
     echo -e "$GREEN* ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚══════╝*$COL_RESET"
     echo -e "$GREEN***************************************************$COL_RESET"
+    echo -e "$GREEN* Afiniel-yiimp Install Script v0.3               *$COL_RESET"
     sleep 3
 
 
@@ -362,7 +362,7 @@
     
     # Compile Blocknotify
     cd ~
-    git clone https://github.com/Kudaraidee/yiimp.git -b kawpow
+    hide_output git clone https://github.com/Kudaraidee/yiimp.git -b kawpow
     cd $HOME/yiimp/blocknotify
     sudo sed -i 's/tu8tu5/'$blckntifypass'/' blocknotify.cpp
     hide_output sudo make
@@ -1163,7 +1163,7 @@
     echo
     echo -e "$GREEN***************************$COL_RESET"
     echo -e "$GREEN yiimp Install Script v0.2 $COL_RESET"
-    echo -e "$GREEN Finish !!! $COL_RESET"
+    echo -e "$GREEN Finish !!!                $COL_RESET"
     echo -e "$GREEN***************************$COL_RESET"
     echo 
     echo
@@ -1184,5 +1184,5 @@
     echo -e "$RED***************************************************$COL_RESET"
     echo -e "$RED YOU MUST REBOOT NOW  TO FINALIZE INSTALLATION !!! $COL_RESET"
     echo -e "$RED***************************************************$COL_RESET"
-    echo -e "$RED 𝐻𝒶𝓅𝓅𝓎 𝑀𝒾𝓃𝒾𝓃𝑔!                                  $COL_RESET"
+    echo -e "$GREEN 𝐻𝒶𝓅𝓅𝓎 𝑀𝒾𝓃𝒾𝓃𝑔!                                  $COL_RESET"
     echo
