@@ -1,4 +1,4 @@
-# Yiimp-install-kawpow v0.3 (update dec 2021-12-22)
+# Yiimp Kawpow Installer v0.3 (update dec 2021-12-22)
 
 Need Help? join us <a href="https://discord.gg/GVZ4tchkKc"><img src="https://img.shields.io/discord/904564600354254898.svg?style=flat&label=Discord %3C3%20&color=7289DA%22" alt="Join Community Badge"/></a>
 
