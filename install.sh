@@ -423,9 +423,9 @@
     if [ ! -f /etc/timezone ]; then
     echo "Setting timezone to UTC."
     echo "Etc/UTC" > sudo /etc/timezone
-    sudo systemctl restart rsyslog
+    hide_output sudo systemctl restart rsyslog
     fi
-    sudo systemctl status rsyslog | sed -n "1,3p"
+    hide_output sudo systemctl status rsyslog | sed -n "1,3p"
     echo
     echo -e "$GREEN Done...$COL_RESET"
     
@@ -746,7 +746,7 @@
     apt_install letsencrypt
     sudo letsencrypt certonly -a webroot --webroot-path=/var/web --email "$EMAIL" --agree-tos -d "$server_name" -d www."$server_name"
     sudo rm /etc/nginx/sites-available/$server_name.conf
-    sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+    hide_output sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
     # I am SSL Man!
 	echo 'include /etc/nginx/blockuseragents.rules;
 	server {
