@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################################################
 # Original Author:   crombiecrunch
-# Modified by : Afiniel (https://github.com/afiniel/yiimp-install-Kudaraidee)
+# Modified by : Afiniel (https://github.com/afiniel/yiimp-kawpow-installer)
 #    
 #
 # Program:
@@ -52,7 +52,7 @@
     echo -e "$GREEN* ██║  ██║██║     ██║██║ ╚████║██║███████╗███████╗*$COL_RESET"
     echo -e "$GREEN* ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚══════╝*$COL_RESET"
     echo -e "$GREEN***************************************************$COL_RESET"
-    echo -e "$GREEN* Afiniel-yiimp Install Script v0.3               *$COL_RESET"
+    echo -e "$GREEN*yiimp-kawpow-Install Script v0.3                 *$COL_RESET"
     sleep 3
 
 
@@ -85,7 +85,7 @@
     echo -e "$RED Make sure you double check before hitting enter! Only one shot at these! $COL_RESET"
     echo
     #read -e -p "Enter time zone (e.g. America/New_York) : " TIME
-    read -e -p "If you have a domain Name (no http:// or www. just : example.com or pool.example.com or 185.22.24.26) : " server_name
+    read -e -p "Enter your domain name (no http:// or www. just : example.com or pool.example.com or 185.22.24.26) : " server_name
     read -e -p "Are you using a subdomain (mycryptopool.example.com?) [y/N] : " sub_domain
     read -e -p "Enter support email (e.g. admin@example.com) : " EMAIL
     read -e -p "Set Pool to AutoExchange? i.e. mine any coin with BTC address? [y/N] : " BTC
@@ -1162,7 +1162,7 @@
     echo
     echo
     echo -e "$GREEN***************************$COL_RESET"
-    echo -e "$GREEN yiimp Install Script v0.2 $COL_RESET"
+    echo -e "$GREEN yiimp Install Script v0.3 $COL_RESET"
     echo -e "$GREEN Finish !!!                $COL_RESET"
     echo -e "$GREEN***************************$COL_RESET"
     echo 
@@ -1184,5 +1184,5 @@
     echo -e "$RED***************************************************$COL_RESET"
     echo -e "$RED YOU MUST REBOOT NOW  TO FINALIZE INSTALLATION !!! $COL_RESET"
     echo -e "$RED***************************************************$COL_RESET"
-    echo -e "$GREEN 𝐻𝒶𝓅𝓅𝓎 𝑀𝒾𝓃𝒾𝓃𝑔!                                  $COL_RESET"
+    echo -e "$GREEN 𝐻𝒶𝓅𝓅𝓎 𝑀𝒾𝓃𝒾𝓃𝑔!                                $COL_RESET"
     echo
