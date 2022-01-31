@@ -2,7 +2,9 @@
 #####################################################
 # Source https://mailinabox.email/ https://github.com/mail-in-a-box/mailinabox
 # Updated by cryptopool.builders for crypto use...
-# Modified by Xavatar
+# Modified by Afiniel
+# Last updated 2022-01-31
+# 
 #####################################################
 
 ESC_SEQ="\x1b["
@@ -46,6 +48,63 @@ function hide_output {
 		rm -f $OUTPUT
 }
 
+
+# Install art.
+
+function terminal_art {
+
+	clear
+    echo
+    echo -e "$GREEN********************************************************************$COL_RESET"
+	echo -e "$GREEN 888    d8P                                                         $COL_RESET"
+	echo -e "$GREEN 888   d8P                                                          $COL_RESET"
+	echo -e "$GREEN 888  d8P                                                           $COL_RESET"
+	echo -e "$GREEN 888d88K      8888b.  888  888  888 88888b.   .d88b.  888  888  888 $COL_RESET"
+	echo -e "$GREEN 8888888b        "88b 888  888  888 888 "88b d88""88b 888  888  888 $COL_RESET"
+	echo -e "$GREEN 888  Y88b   .d888888 888  888  888 888  888 888  888 888  888  888 $COL_RESET"
+	echo -e "$GREEN 888   Y88b  888  888 Y88b 888 d88P 888 d88P Y88..88P Y88b 888 d88P $COL_RESET"
+	echo -e "$GREEN 888    Y88b "Y888888  "Y8888888P"  88888P"   "Y88P"   "Y8888888P"  $COL_RESET"
+    echo -e "$GREEN                              	   888                             $COL_RESET"
+    echo -e "$GREEN                               	   888                             $COL_RESET"
+    echo -e "$GREEN                               	   888                             $COL_RESET"                                                               
+    echo -e "$GREEN********************************************************************$COL_RESET"
+    echo -e "$GREEN*Yiimp-kawpow-Install Script by Afiniel. *$COL_RESET"
+    sleep 3
+}
+
+# Information about the installation.
+
+function install_end_message {
+
+	echo
+    echo
+    echo
+    echo -e "$GREEN********************************************$COL_RESET"
+    echo -e "$GREEN Yiimp-kawpow-Install Script by Afiniel.$COL_RESET"
+    echo -e "$GREEN Finish! Sussessfully installation 		   $COL_RESET"
+    echo -e "$GREEN********************************************$COL_RESET"
+    echo 
+    echo
+    echo
+    echo -e "$CYAN Whew that was fun, just some reminders. $COL_RESET" 
+    echo -e "$RED Your mysql information is saved in ~/.my.cnf. $COL_RESET"
+    echo
+    echo -e "$RED yiimp at : http://"$server_name" (https... if SSL enabled)"
+    echo -e "$RED yiimp Admin at : http://"$server_name"/site/AdminPanel (https... if SSL enabled)"
+    echo -e "$RED yiimp phpMyAdmin at : http://"$server_name"/phpmyadmin (https... if SSL enabled)"
+    echo
+    echo -e "$RED If you want change 'AdminPanel' to access Panel Admin : Edit this file : /var/web/yaamp/modules/site/SiteController.php"
+    echo -e "$RED Line 11 => change 'AdminPanel' and use the new address"
+    echo
+    echo -e "$CYAN Please make sure to change your public keys / wallet addresses in the /var/web/serverconfig.php file. $COL_RESET"
+    echo -e "$CYAN Please make sure to change your private keys in the /etc/yiimp/keys.php file. $COL_RESET"
+    echo
+    echo -e "$RED***************************************************$COL_RESET"
+    echo -e "$RED YOU MUST REBOOT NOW  TO FINALIZE INSTALLATION !!! $COL_RESET"
+    echo -e "$RED***************************************************$COL_RESET"
+    echo -e "$GREEN 𝐻𝒶𝓅𝓅𝓎 𝑀𝒾𝓃𝒾𝓃𝑔!                                $COL_RESET"
+    echo
+}
 
 function apt_get_quiet {
 		DEBIAN_FRONTEND=noninteractive hide_output sudo apt -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confnew" "$@"

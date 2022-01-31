@@ -41,20 +41,8 @@
 
     source /etc/functions.sh
 
-
-    clear
-    echo
-    echo -e "$GREEN***************************************************$COL_RESET"
-    echo -e "$GREEN*  █████╗ ███████╗██╗███╗   ██╗██╗███████╗██╗     *$COL_RESET"
-    echo -e "$GREEN* ██╔══██╗██╔════╝██║████╗  ██║██║██╔════╝██║     *$COL_RESET"
-    echo -e "$GREEN* ███████║█████╗  ██║██╔██╗ ██║██║█████╗  ██║     *$COL_RESET"
-    echo -e "$GREEN* ██╔══██║██╔══╝  ██║██║╚██╗██║██║██╔══╝  ██║     *$COL_RESET"
-    echo -e "$GREEN* ██║  ██║██║     ██║██║ ╚████║██║███████╗███████╗*$COL_RESET"
-    echo -e "$GREEN* ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚══════╝*$COL_RESET"
-    echo -e "$GREEN***************************************************$COL_RESET"
-    echo -e "$GREEN*yiimp-kawpow-Install Script v0.3                 *$COL_RESET"
-    sleep 3
-
+    # Art
+    terminal_art
 
     # Update package and Upgrade Ubuntu
     echo
@@ -362,7 +350,7 @@
     
     # Compile Blocknotify
     cd ~
-    hide_output git clone https://github.com/Kudaraidee/yiimp.git -b kawpow
+    hide_output git clone https://github.com/afiniel/yiimp.git -b kawpow-afiniel
     cd $HOME/yiimp/blocknotify
     sudo sed -i 's/tu8tu5/'$blckntifypass'/' blocknotify.cpp
     hide_output sudo make
@@ -1158,31 +1146,5 @@
     echo -e "$GREEN Done...$COL_RESET"
     sleep 3
 
-    echo
-    echo
-    echo
-    echo -e "$GREEN***************************$COL_RESET"
-    echo -e "$GREEN yiimp Install Script v0.3 $COL_RESET"
-    echo -e "$GREEN Finish !!!                $COL_RESET"
-    echo -e "$GREEN***************************$COL_RESET"
-    echo 
-    echo
-    echo
-    echo -e "$CYAN Whew that was fun, just some reminders. $COL_RESET" 
-    echo -e "$RED Your mysql information is saved in ~/.my.cnf. $COL_RESET"
-    echo
-    echo -e "$RED yiimp at : http://"$server_name" (https... if SSL enabled)"
-    echo -e "$RED yiimp Admin at : http://"$server_name"/site/AdminPanel (https... if SSL enabled)"
-    echo -e "$RED yiimp phpMyAdmin at : http://"$server_name"/phpmyadmin (https... if SSL enabled)"
-    echo
-    echo -e "$RED If you want change 'AdminPanel' to access Panel Admin : Edit this file : /var/web/yaamp/modules/site/SiteController.php"
-    echo -e "$RED Line 11 => change 'AdminPanel' and use the new address"
-    echo
-    echo -e "$CYAN Please make sure to change your public keys / wallet addresses in the /var/web/serverconfig.php file. $COL_RESET"
-    echo -e "$CYAN Please make sure to change your private keys in the /etc/yiimp/keys.php file. $COL_RESET"
-    echo
-    echo -e "$RED***************************************************$COL_RESET"
-    echo -e "$RED YOU MUST REBOOT NOW  TO FINALIZE INSTALLATION !!! $COL_RESET"
-    echo -e "$RED***************************************************$COL_RESET"
-    echo -e "$GREEN 𝐻𝒶𝓅𝓅𝓎 𝑀𝒾𝓃𝒾𝓃𝑔!                                $COL_RESET"
-    echo
+    terminal_art
+    install_end_message

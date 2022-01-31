@@ -1,4 +1,4 @@
-# Yiimp Kawpow Installer v0.3 (update dec 2021-12-22)
+# Yiimp-kawpow-Install Script by Afiniel (update dec 2022-01-31)
 
 Need Help? join us <a href="https://discord.gg/GVZ4tchkKc"><img src="https://img.shields.io/discord/904564600354254898.svg?style=flat&label=Discord %3C3%20&color=7289DA%22" alt="Join Community Badge"/></a>
 
@@ -7,7 +7,7 @@ Original Yiimp Installer : https://github.com/cryptopool-builders/multipool_orig
 
 ***********************************
 
-## Install script for Ubuntu 16.04 / 18.04 (Kudaraidee's Yiimp fork)
+## Install script for Ubuntu 16.04 / 18.04
 
 USE THIS SCRIPT ON FRESH INSTALL UBUNTU Server 16.04 / 18.04 !
 
