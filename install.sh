@@ -234,89 +234,7 @@
     echo -e "$GREEN Sussess!$COL_RESET"
     
     # Installing Fail2Ban & UFW
-    echo
-    echo
-    echo -e "$CYAN => Some optional installs (Fail2Ban & UFW) $COL_RESET"
-    echo
-    sleep 3
-    
-    
-    if [[ ("$install_fail2ban" == "y" || "$install_fail2ban" == "Y" || "$install_fail2ban" == "") ]]; then
-    apt_install fail2ban
-    sleep 5
-    hide_output sudo systemctl status fail2ban | sed -n "1,3p"
-        fi
-
-
-    if [[ ("$UFW" == "y" || "$UFW" == "Y" || "$UFW" == "") ]]; then
-    apt_install ufw
-    hide_output sudo ufw default deny incoming
-    hide_output sudo ufw default allow outgoing
-    hide_output sudo ufw allow ssh
-    hide_output sudo ufw allow http
-    hide_output sudo ufw allow https
-    hide_output sudo ufw allow 3333/tcp
-    hide_output sudo ufw allow 3339/tcp
-    hide_output sudo ufw allow 3334/tcp
-    hide_output sudo ufw allow 3433/tcp
-    hide_output sudo ufw allow 3555/tcp
-    hide_output sudo ufw allow 3556/tcp
-    hide_output sudo ufw allow 3573/tcp
-    hide_output sudo ufw allow 3535/tcp
-    hide_output sudo ufw allow 3533/tcp
-    hide_output sudo ufw allow 3553/tcp
-    hide_output sudo ufw allow 3633/tcp
-    hide_output sudo ufw allow 3733/tcp
-    hide_output sudo ufw allow 3636/tcp
-    hide_output sudo ufw allow 3737/tcp
-    hide_output sudo ufw allow 3739/tcp
-    hide_output sudo ufw allow 3747/tcp
-    hide_output sudo ufw allow 3833/tcp
-    hide_output sudo ufw allow 3933/tcp
-    hide_output sudo ufw allow 4033/tcp
-    hide_output sudo ufw allow 4133/tcp
-    hide_output sudo ufw allow 4233/tcp
-    hide_output sudo ufw allow 4234/tcp
-    hide_output sudo ufw allow 4333/tcp
-    hide_output sudo ufw allow 4433/tcp
-    hide_output sudo ufw allow 4533/tcp
-    hide_output sudo ufw allow 4553/tcp
-    hide_output sudo ufw allow 4633/tcp
-    hide_output sudo ufw allow 4733/tcp
-    hide_output sudo ufw allow 4833/tcp
-    hide_output sudo ufw allow 4933/tcp
-    hide_output sudo ufw allow 5033/tcp
-    hide_output sudo ufw allow 5133/tcp
-    hide_output sudo ufw allow 5233/tcp
-    hide_output sudo ufw allow 5333/tcp
-    hide_output sudo ufw allow 5433/tcp
-    hide_output sudo ufw allow 5533/tcp
-    hide_output sudo ufw allow 5733/tcp
-    hide_output sudo ufw allow 5743/tcp
-    hide_output sudo ufw allow 3252/tcp
-    hide_output sudo ufw allow 5755/tcp
-    hide_output sudo ufw allow 5766/tcp
-    hide_output sudo ufw allow 5833/tcp
-    hide_output sudo ufw allow 5933/tcp
-    hide_output sudo ufw allow 6033/tcp
-    hide_output sudo ufw allow 5034/tcp
-    hide_output sudo ufw allow 6133/tcp
-    hide_output sudo ufw allow 6233/tcp
-    hide_output sudo ufw allow 6333/tcp
-    hide_output sudo ufw allow 6433/tcp
-    hide_output sudo ufw allow 7433/tcp
-    hide_output sudo ufw allow 8333/tcp
-    hide_output sudo ufw allow 8463/tcp
-    hide_output sudo ufw allow 8433/tcp
-    hide_output sudo ufw allow 8533/tcp
-    hide_output sudo ufw --force enable
-    sleep 5
-    hide_output sudo systemctl status ufw | sed -n "1,3p"   
-    fi
-
-    
-    echo
-    echo -e "$GREEN Sussess!...$COL_RESET"
+    UFW_F2B_INSTALL
 
     
     # Installing PhpMyAdmin
@@ -521,7 +439,7 @@
     echo -e "Install LetsEncrypt and setting SSL (with SubDomain)"
     echo
     
-    apt_install letsencrypt
+    apt_install letsencrypt -y
     sudo letsencrypt certonly -a webroot --webroot-path=/var/web --email "$EMAIL" --agree-tos -d "$server_name"
     sudo rm /etc/nginx/sites-available/$server_name.conf
     sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
@@ -732,7 +650,7 @@
     echo
     sleep 3
     
-    apt_install letsencrypt
+    apt_install letsencrypt -y
     sudo letsencrypt certonly -a webroot --webroot-path=/var/web --email "$EMAIL" --agree-tos -d "$server_name" -d www."$server_name"
     sudo rm /etc/nginx/sites-available/$server_name.conf
     hide_output sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
@@ -1101,13 +1019,13 @@
     sudo apt-mark hold openssl
 
     #Restart service
-    sudo systemctl restart cron.service
-    sudo systemctl restart mysql
-    sudo systemctl status mysql | sed -n "1,3p"
-    sudo systemctl restart nginx.service
-    sudo systemctl status nginx | sed -n "1,3p"
-    sudo systemctl restart php7.3-fpm.service
-    sudo systemctl status php7.3-fpm | sed -n "1,3p"
+    hide_output sudo systemctl restart cron.service
+    hide_output sudo systemctl restart mysql
+    hide_output sudo systemctl status mysql | sed -n "1,3p"
+    hide_output sudo systemctl restart nginx.service
+    hide_output sudo systemctl status nginx | sed -n "1,3p"
+    hide_output sudo systemctl restart php7.3-fpm.service
+    hide_output sudo systemctl status php7.3-fpm | sed -n "1,3p"
     echo
     echo -e "$GREEN Sussess!$COL_RESET"
     sleep 3

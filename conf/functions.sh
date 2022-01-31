@@ -126,16 +126,13 @@ function import_SQL_schemas {
 	echo
 	sudo zcat 2020-11-10-yaamp.sql.gz | sudo mysql --defaults-group-suffix=host1
 	echo
-	sudo mysql --defaults-group-suffix=host1 --force < 2015-07-15-coins_hasmasternodes.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2015-09-20-blocks_worker.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2016-02-17-payouts_errmsg.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2016-02-18-accounts_donation.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2016-02-23-shares_diff.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2016-03-30-coins.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2018-01-stratums_ports.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2016-04-24-market_history.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2016-04-27-settings.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2016-05-11-coins.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2016-05-15-benchmarks.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2016-05-23-bookmarks.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2016-06-01-notifications.sql
@@ -155,6 +152,94 @@ function import_SQL_schemas {
     sudo mysql --defaults-group-suffix=host1 --force < 2020-06-03-blocks.sql
     echo -e "$GREEN Sussess!$COL_RESET"
 }
+
+
+function UFW_F2B_INSTALL {
+
+	echo
+    echo -e "$CYAN => Some optional installs (Fail2Ban & UFW) $COL_RESET"
+    echo
+    sleep 3
+    
+    
+    if [[ ("$install_fail2ban" == "y" || "$install_fail2ban" == "Y" || "$install_fail2ban" == "") ]]; then
+    apt_install fail2ban
+    sleep 5
+    hide_output sudo systemctl status fail2ban | sed -n "1,3p"
+        fi
+
+
+    if [[ ("$UFW" == "y" || "$UFW" == "Y" || "$UFW" == "") ]]; then
+    apt_install ufw
+    hide_output sudo ufw default deny incoming
+    hide_output sudo ufw default allow outgoing
+    hide_output sudo ufw allow ssh
+    hide_output sudo ufw allow http
+    hide_output sudo ufw allow https
+    hide_output sudo ufw allow 3333/tcp
+    hide_output sudo ufw allow 3339/tcp
+    hide_output sudo ufw allow 3334/tcp
+    hide_output sudo ufw allow 3433/tcp
+    hide_output sudo ufw allow 3555/tcp
+    hide_output sudo ufw allow 3556/tcp
+    hide_output sudo ufw allow 3573/tcp
+    hide_output sudo ufw allow 3535/tcp
+    hide_output sudo ufw allow 3533/tcp
+    hide_output sudo ufw allow 3553/tcp
+    hide_output sudo ufw allow 3633/tcp
+    hide_output sudo ufw allow 3733/tcp
+    hide_output sudo ufw allow 3636/tcp
+    hide_output sudo ufw allow 3737/tcp
+    hide_output sudo ufw allow 3739/tcp
+    hide_output sudo ufw allow 3747/tcp
+    hide_output sudo ufw allow 3833/tcp
+    hide_output sudo ufw allow 3933/tcp
+    hide_output sudo ufw allow 4033/tcp
+    hide_output sudo ufw allow 4133/tcp
+    hide_output sudo ufw allow 4233/tcp
+    hide_output sudo ufw allow 4234/tcp
+    hide_output sudo ufw allow 4333/tcp
+    hide_output sudo ufw allow 4433/tcp
+    hide_output sudo ufw allow 4533/tcp
+    hide_output sudo ufw allow 4553/tcp
+    hide_output sudo ufw allow 4633/tcp
+    hide_output sudo ufw allow 4733/tcp
+    hide_output sudo ufw allow 4833/tcp
+    hide_output sudo ufw allow 4933/tcp
+    hide_output sudo ufw allow 5033/tcp
+    hide_output sudo ufw allow 5133/tcp
+    hide_output sudo ufw allow 5233/tcp
+    hide_output sudo ufw allow 5333/tcp
+    hide_output sudo ufw allow 5433/tcp
+    hide_output sudo ufw allow 5533/tcp
+    hide_output sudo ufw allow 5733/tcp
+    hide_output sudo ufw allow 5743/tcp
+    hide_output sudo ufw allow 3252/tcp
+    hide_output sudo ufw allow 5755/tcp
+    hide_output sudo ufw allow 5766/tcp
+    hide_output sudo ufw allow 5833/tcp
+    hide_output sudo ufw allow 5933/tcp
+    hide_output sudo ufw allow 6033/tcp
+    hide_output sudo ufw allow 5034/tcp
+    hide_output sudo ufw allow 6133/tcp
+    hide_output sudo ufw allow 6233/tcp
+    hide_output sudo ufw allow 6333/tcp
+    hide_output sudo ufw allow 6433/tcp
+    hide_output sudo ufw allow 7433/tcp
+    hide_output sudo ufw allow 8333/tcp
+    hide_output sudo ufw allow 8463/tcp
+    hide_output sudo ufw allow 8433/tcp
+    hide_output sudo ufw allow 8533/tcp
+    hide_output sudo ufw --force enable
+    sleep 5
+    hide_output sudo systemctl status ufw | sed -n "1,3p"   
+    fi
+
+    
+    echo
+    echo -e "$GREEN Sussess!...$COL_RESET"
+}
+
 
 function apt_get_quiet {
 		DEBIAN_FRONTEND=noninteractive hide_output sudo apt -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confnew" "$@"

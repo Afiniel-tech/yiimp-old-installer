@@ -1,4 +1,6 @@
 #!/bin/bash
+
+# Keep update Screens later.
  STRATUM_DIR=/var/stratum
  
  screen -dmS groestl $STRATUM_DIR/run.sh groestl
