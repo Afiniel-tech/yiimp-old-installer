@@ -52,24 +52,19 @@ function hide_output {
 # Install art.
 
 function terminal_art {
-
 	clear
     echo
-    echo -e "$GREEN********************************************************************$COL_RESET"
-	echo -e "$GREEN 888    d8P                                                         $COL_RESET"
-	echo -e "$GREEN 888   d8P                                                          $COL_RESET"
-	echo -e "$GREEN 888  d8P                                                           $COL_RESET"
-	echo -e "$GREEN 888d88K      8888b.  888  888  888 88888b.   .d88b.  888  888  888 $COL_RESET"
-	echo -e "$GREEN 8888888b        "88b 888  888  888 888 "88b d88""88b 888  888  888 $COL_RESET"
-	echo -e "$GREEN 888  Y88b   .d888888 888  888  888 888  888 888  888 888  888  888 $COL_RESET"
-	echo -e "$GREEN 888   Y88b  888  888 Y88b 888 d88P 888 d88P Y88..88P Y88b 888 d88P $COL_RESET"
-	echo -e "$GREEN 888    Y88b "Y888888  "Y8888888P"  88888P"   "Y88P"   "Y8888888P"  $COL_RESET"
-    echo -e "$GREEN                              	   888                             $COL_RESET"
-    echo -e "$GREEN                               	   888                             $COL_RESET"
-    echo -e "$GREEN                               	   888                             $COL_RESET"                                                               
-    echo -e "$GREEN********************************************************************$COL_RESET"
-    echo -e "$GREEN*Yiimp-kawpow-Install Script by Afiniel. *$COL_RESET"
-    sleep 3
+	echo -e "$RED   --------------------------------------------------------------------------- $COL_RESET"                                                                                                                          
+	echo -e "$GREEN 888    d8P         d8888 888       888 8888888b.   .d88888b.  888       888 $COL_RESET"
+	echo -e "$GREEN 888   d8P         d88888 888   o   888 888   Y88b d88P   Y88b 888   o   888 $COL_RESET"
+	echo -e "$GREEN 888  d8P         d88P888 888  d8b  888 888    888 888     888 888  d8b  888 $COL_RESET"
+	echo -e "$GREEN 888d88K         d88P 888 888 d888b 888 888   d88P 888     888 888 d888b 888 $COL_RESET"
+	echo -e "$GREEN 8888888b       d88P  888 888d88888b888 8888888P   888     888 888d88888b888 $COL_RESET"
+	echo -e "$GREEN 888  Y88b     d88P   888 88888P Y88888 888        888     888 88888P Y88888 $COL_RESET"
+	echo -e "$GREEN 888   Y88b   d8888888888 8888P   Y8888 888        Y88b. .d88P 8888P   Y8888 $COL_RESET"
+	echo -e "$GREEN 888    Y88b d88P     888 888P     Y888 888          Y88888P   888P     Y888 $COL_RESET"
+	echo -e "$RED   --------------------------------------------------------------------------- $COL_RESET"
+	echo -e "$RED   Yiimp-kawpow-Install Script by Afiniel. Discord https://discord.gg/vV3JvN5JFm $COL_RESET"
 }
 
 # Information about the installation.
@@ -80,13 +75,13 @@ function install_end_message {
     echo
     echo
     echo -e "$GREEN********************************************$COL_RESET"
-    echo -e "$GREEN Yiimp-kawpow-Install Script by Afiniel.$COL_RESET"
+    echo -e "$GREEN Yiimp-kawpow-Install Script by Afiniel.	   $COL_RESET"
     echo -e "$GREEN Finish! Sussessfully installation 		   $COL_RESET"
     echo -e "$GREEN********************************************$COL_RESET"
     echo 
     echo
     echo
-    echo -e "$CYAN Whew that was fun, just some reminders. $COL_RESET" 
+    echo -e "$CYAN Whew that was fun, just some reminders.      $COL_RESET" 
     echo -e "$RED Your mysql information is saved in ~/.my.cnf. $COL_RESET"
     echo
     echo -e "$RED yiimp at : http://"$server_name" (https... if SSL enabled)"
@@ -94,7 +89,7 @@ function install_end_message {
     echo -e "$RED yiimp phpMyAdmin at : http://"$server_name"/phpmyadmin (https... if SSL enabled)"
     echo
     echo -e "$RED If you want change 'AdminPanel' to access Panel Admin : Edit this file : /var/web/yaamp/modules/site/SiteController.php"
-    echo -e "$RED Line 11 => change 'AdminPanel' and use the new address"
+    echo -e "$RED Line 11 => change 'AdminPanel' and use the new address ETC.."
     echo
     echo -e "$CYAN Please make sure to change your public keys / wallet addresses in the /var/web/serverconfig.php file. $COL_RESET"
     echo -e "$CYAN Please make sure to change your private keys in the /etc/yiimp/keys.php file. $COL_RESET"
