@@ -936,7 +936,14 @@
     # Import sql dump
     sudo zcat 2016-04-03-yaamp.sql.gz | sudo mysql --defaults-group-suffix=host1
     
-    # Oh the humanity!
+    # Sql schemas
+    sudo mysql --defaults-group-suffix=host1 --force < 2015-07-15-coins_hasmasternodes.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2015-09-20-blocks_worker.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2016-02-17-payouts_errmsg.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2016-02-18-accounts_donation.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2016-02-23-shares_diff.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2016-03-30-coins.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2018-01-stratums_ports.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2016-04-24-market_history.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2016-04-27-settings.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2016-05-11-coins.sql
@@ -954,8 +961,11 @@
     sudo mysql --defaults-group-suffix=host1 --force < 2017-11-segwit.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2018-01-stratums_ports.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2018-02-coins_getinfo.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2018-09-22-workers.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2019-03-coins_thepool_life.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2020-06-03-blocks.sql
     echo -e "$GREEN Sussess!$COL_RESET"
-        
+      
     
     # Generating a basic yiimp serverconfig.php
     echo
