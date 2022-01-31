@@ -12,7 +12,6 @@ Original Yiimp Installer : https://github.com/cryptopool-builders/multipool_orig
 USE THIS SCRIPT ON FRESH INSTALL UBUNTU Server 16.04 / 18.04 !
 
 Connect on your VPS =>
-- sudo apt-get update && sudo apt-get upgrade -y
 - adduser pool (pool it's just an example...)
 - adduser pool sudo
 - sudo reboot
@@ -23,10 +22,6 @@ Connect on your VPS =>
 - cd  Yiimp-kawpow-installer
 - bash install.sh (Remember to be on your pool user Beforce you do Bash install.sh)
 - At the end, you MUST REBOOT to finalize installation...
-
-Finish !
-- Go http://xxx.xxx.xxx.xxx or https://xxx.xxx.xxx.xxx (if you have chosen LetsEncrypt SSL). Enjoy !
-- Go http://xxx.xxx.xxx.xxx/AdminPanel or https://xxx.xxx.xxx.xxx/AdminPanel to access Panel Admin
 
 If you have issue after installation (nginx,mariadb... not found), use this script : bash install-debug.sh (watch the log during installation)
 
@@ -58,8 +53,6 @@ If you have issue after installation (nginx,mariadb... not found), use this scri
 
 **This install script will get you 95% ready to go with yiimp. There are a few things you need to do after the main install is finished.**
 
-While I did add some server security to the script, it is every server owners responsibility to fully secure their own servers. After the installation you will still need to customize your serverconfig.php file to your liking, add your API keys, and build/add your coins to the control panel. 
-
-There will be several wallets already in yiimp. These have nothing to do with the installation script and are from the database import from the yiimp github.
+It is every server owners responsibility to fully secure their own servers. After the installation you will still need to customize your serverconfig.php file to your liking, add your API keys, and build/add your coins to the control panel. 
 
 # Happy Mining‼️
