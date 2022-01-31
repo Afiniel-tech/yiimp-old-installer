@@ -922,50 +922,7 @@
 
  
     # Peforming the SQL import
-    echo
-    echo
-    echo -e "$CYAN => Database 'yiimp-frontend' and users 'panel' and 'stratum' created with password $password and $password2, will be saved for you $COL_RESET"
-    echo
-    echo -e "Import mysql database schemas!"
-    echo
-    sleep 3
-    
-    cd ~
-    cd yiimp/sql
-    
-    # Import sql dump
-    sudo zcat 2020-11-10-yaamp.sql.gz | sudo mysql --defaults-group-suffix=host1
-    
-    # Sql schemas
-    sudo mysql --defaults-group-suffix=host1 --force < 2015-07-15-coins_hasmasternodes.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2015-09-20-blocks_worker.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2016-02-17-payouts_errmsg.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2016-02-18-accounts_donation.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2016-02-23-shares_diff.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2016-03-30-coins.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2018-01-stratums_ports.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2016-04-24-market_history.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2016-04-27-settings.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2016-05-11-coins.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2016-05-15-benchmarks.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2016-05-23-bookmarks.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2016-06-01-notifications.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2016-06-04-bench_chips.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2016-11-23-coins.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2017-02-05-benchmarks.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2017-03-31-earnings_index.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2017-05-accounts_case_swaptime.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2017-06-payouts_coinid_memo.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2017-09-notifications.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2017-10-bookmarks.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2017-11-segwit.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2018-01-stratums_ports.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2018-02-coins_getinfo.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2018-09-22-workers.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2019-03-coins_thepool_life.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2020-06-03-blocks.sql
-    echo -e "$GREEN Sussess!$COL_RESET"
-      
+    import_SQL_schemas
     
     # Generating a basic yiimp serverconfig.php
     echo
@@ -1151,11 +1108,11 @@
     sudo systemctl status nginx | sed -n "1,3p"
     sudo systemctl restart php7.3-fpm.service
     sudo systemctl status php7.3-fpm | sed -n "1,3p"
-
-
     echo
     echo -e "$GREEN Sussess!$COL_RESET"
     sleep 3
 
-    terminal_art
+    # Installation end massage
+    echo
     install_end_message
+    echo

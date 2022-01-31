@@ -62,27 +62,34 @@ function terminal_art {
 	echo -e "$GREEN 888  Y88b     d88P   888 88888P Y88888 888        888     888 88888P Y88888 $COL_RESET"
 	echo -e "$GREEN 888   Y88b   d8888888888 8888P   Y8888 888        Y88b. .d88P 8888P   Y8888 $COL_RESET"
 	echo -e "$GREEN 888    Y88b d88P     888 888P     Y888 888          Y88888P   888P     Y888 $COL_RESET"
-	echo -e "$RED ----------------------------------------------------------------------------- $COL_RESET"
-	echo -e "$RED   Yiimp-kawpow-Install Script by Afiniel. Discord: https://discord.gg/vV3JvN5JFm $COL_RESET"
+	echo -e "$GREEN********************************************$COL_RESET"
+    echo -e "$GREEN Yiimp-kawpow-Install Script by Afiniel.	   $COL_RESET"
+    echo -e "$GREEN Finish! Sussessfully installation 		   $COL_RESET"
+    echo -e "$GREEN********************************************$COL_RESET"
 }
 
 # Information about the installation.
 
 function install_end_message {
 
-	echo
-    echo
-    echo
-    echo -e "$GREEN********************************************$COL_RESET"
+	clear
+	echo                                                                                                                          
+	echo -e "$GREEN 888    d8P         d8888 888       888 8888888b.   .d88888b.  888       888 $COL_RESET"
+	echo -e "$GREEN 888   d8P         d88888 888   o   888 888   Y88b d88P   Y88b 888   o   888 $COL_RESET"
+	echo -e "$GREEN 888  d8P         d88P888 888  d8b  888 888    888 888     888 888  d8b  888 $COL_RESET"
+	echo -e "$GREEN 888d88K         d88P 888 888 d888b 888 888   d88P 888     888 888 d888b 888 $COL_RESET"
+	echo -e "$GREEN 8888888b       d88P  888 888d88888b888 8888888P   888     888 888d88888b888 $COL_RESET"
+	echo -e "$GREEN 888  Y88b     d88P   888 88888P Y88888 888        888     888 88888P Y88888 $COL_RESET"
+	echo -e "$GREEN 888   Y88b   d8888888888 8888P   Y8888 888        Y88b. .d88P 8888P   Y8888 $COL_RESET"
+	echo -e "$GREEN 888    Y88b d88P     888 888P     Y888 888          Y88888P   888P     Y888 $COL_RESET"
+	echo ""
+	echo -e "$GREEN********************************************$COL_RESET"
     echo -e "$GREEN Yiimp-kawpow-Install Script by Afiniel.	   $COL_RESET"
     echo -e "$GREEN Finish! Sussessfully installation 		   $COL_RESET"
-    echo -e "$GREEN********************************************$COL_RESET"
-    echo 
-    echo
-    echo
+    echo -e ""
     echo -e "$CYAN Whew that was fun, just some reminders.      $COL_RESET" 
     echo -e "$RED Your mysql information is saved in ~/.my.cnf. $COL_RESET"
-    echo
+    echo -e "$GREEN********************************************$COL_RESET"
     echo -e "$RED yiimp at : http://"$server_name" (https... if SSL enabled)"
     echo -e "$RED yiimp Admin at : http://"$server_name"/site/AdminPanel (https... if SSL enabled)"
     echo -e "$RED yiimp phpMyAdmin at : http://"$server_name"/phpmyadmin (https... if SSL enabled)"
@@ -98,6 +105,55 @@ function install_end_message {
     echo -e "$RED***************************************************$COL_RESET"
     echo -e "$GREEN 𝐻𝒶𝓅𝓅𝓎 𝑀𝒾𝓃𝒾𝓃𝑔!                                $COL_RESET"
     echo
+}
+
+# Function SQL schemas import
+
+function import_SQL_schemas {
+
+
+	echo
+    echo
+    echo -e "$CYAN => Database 'yiimp-frontend' and users 'panel' and 'stratum' created with password $password and $password2, will be saved for you $COL_RESET"
+    echo
+    echo -e "Import mysql database schemas!"
+    echo
+    sleep 3
+    
+    cd ~
+    cd yiimp/sql
+
+	echo
+	sudo zcat 2020-11-10-yaamp.sql.gz | sudo mysql --defaults-group-suffix=host1
+	echo
+	sudo mysql --defaults-group-suffix=host1 --force < 2015-07-15-coins_hasmasternodes.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2015-09-20-blocks_worker.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2016-02-17-payouts_errmsg.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2016-02-18-accounts_donation.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2016-02-23-shares_diff.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2016-03-30-coins.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2018-01-stratums_ports.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2016-04-24-market_history.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2016-04-27-settings.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2016-05-11-coins.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2016-05-15-benchmarks.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2016-05-23-bookmarks.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2016-06-01-notifications.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2016-06-04-bench_chips.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2016-11-23-coins.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2017-02-05-benchmarks.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2017-03-31-earnings_index.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2017-05-accounts_case_swaptime.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2017-06-payouts_coinid_memo.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2017-09-notifications.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2017-10-bookmarks.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2017-11-segwit.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2018-01-stratums_ports.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2018-02-coins_getinfo.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2018-09-22-workers.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2019-03-coins_thepool_life.sql
+    sudo mysql --defaults-group-suffix=host1 --force < 2020-06-03-blocks.sql
+    echo -e "$GREEN Sussess!$COL_RESET"
 }
 
 function apt_get_quiet {
