@@ -53,8 +53,7 @@ function hide_output {
 
 function terminal_art {
 	clear
-    echo
-	echo -e "$RED   --------------------------------------------------------------------------- $COL_RESET"                                                                                                                          
+    echo                                                                                                                          
 	echo -e "$GREEN 888    d8P         d8888 888       888 8888888b.   .d88888b.  888       888 $COL_RESET"
 	echo -e "$GREEN 888   d8P         d88888 888   o   888 888   Y88b d88P   Y88b 888   o   888 $COL_RESET"
 	echo -e "$GREEN 888  d8P         d88P888 888  d8b  888 888    888 888     888 888  d8b  888 $COL_RESET"
@@ -63,8 +62,8 @@ function terminal_art {
 	echo -e "$GREEN 888  Y88b     d88P   888 88888P Y88888 888        888     888 88888P Y88888 $COL_RESET"
 	echo -e "$GREEN 888   Y88b   d8888888888 8888P   Y8888 888        Y88b. .d88P 8888P   Y8888 $COL_RESET"
 	echo -e "$GREEN 888    Y88b d88P     888 888P     Y888 888          Y88888P   888P     Y888 $COL_RESET"
-	echo -e "$RED   --------------------------------------------------------------------------- $COL_RESET"
-	echo -e "$RED   Yiimp-kawpow-Install Script by Afiniel. Discord https://discord.gg/vV3JvN5JFm $COL_RESET"
+	echo -e "$RED ----------------------------------------------------------------------------- $COL_RESET"
+	echo -e "$RED   Yiimp-kawpow-Install Script by Afiniel. Discord: https://discord.gg/vV3JvN5JFm $COL_RESET"
 }
 
 # Information about the installation.
