@@ -62,18 +62,24 @@ function terminal_art {
 	echo -e "$GREEN 888  Y88b     d88P   888 88888P Y88888 888        888     888 88888P Y88888 $COL_RESET"
 	echo -e "$GREEN 888   Y88b   d8888888888 8888P   Y8888 888        Y88b. .d88P 8888P   Y8888 $COL_RESET"
 	echo -e "$GREEN 888    Y88b d88P     888 888P     Y888 888          Y88888P   888P     Y888 $COL_RESET"
-	echo -e "$GREEN********************************************$COL_RESET"
-    echo -e "$GREEN Yiimp-kawpow-Install Script by Afiniel.	   $COL_RESET"
-    echo -e "$GREEN Finish! Sussessfully installation 		   $COL_RESET"
-    echo -e "$GREEN********************************************$COL_RESET"
+	echo -e "$CYAN  *************************************************************************** $COL_RESET"
+    echo -e "$GREEN Yiimp-kawpow-Install Script by Afiniel. Wanna help me out? feel free to,	$COL_RESET"
+    echo -e "$GREEN	Donate to the wallet bellow. 												$COL_RESET"
+    echo -e "$GREEN -----------------------------------------------								$COL_RESET"
+    echo -e "$CYAN  BTC: bc1q338jnjdl6dky7ka88ln8qmcekal48uw072n9v9       						$COL_RESET"
+    echo -e "$GREEN -----------------------------------------------								$COL_RESET"
+    echo -e "$CYAN  LTC: LW4iFgCTQAVWoxe4VF7nFy2WLHdR6xNkjK										$COL_RESET"
+    echo -e "$GREEN -----------------------------------------------								$COL_RESET"
+    echo -e "$CYAN  DOGE: DSpy3taXqkbWSkhM4GMtsXftxyYHX2Gt3r									$COL_RESET"
+    echo -e "$GREEN -----------------------------------------------								$COL_RESET"
+    echo -e "$CYAN  *************************************************************************** $COL_RESET"
 }
 
-# Information about the installation.
 
 function install_end_message {
 
 	clear
-	echo                                                                                                                          
+    echo                                                                                                                          
 	echo -e "$GREEN 888    d8P         d8888 888       888 8888888b.   .d88888b.  888       888 $COL_RESET"
 	echo -e "$GREEN 888   d8P         d88888 888   o   888 888   Y88b d88P   Y88b 888   o   888 $COL_RESET"
 	echo -e "$GREEN 888  d8P         d88P888 888  d8b  888 888    888 888     888 888  d8b  888 $COL_RESET"
@@ -82,28 +88,41 @@ function install_end_message {
 	echo -e "$GREEN 888  Y88b     d88P   888 88888P Y88888 888        888     888 88888P Y88888 $COL_RESET"
 	echo -e "$GREEN 888   Y88b   d8888888888 8888P   Y8888 888        Y88b. .d88P 8888P   Y8888 $COL_RESET"
 	echo -e "$GREEN 888    Y88b d88P     888 888P     Y888 888          Y88888P   888P     Y888 $COL_RESET"
-	echo ""
-	echo -e "$GREEN********************************************$COL_RESET"
-    echo -e "$GREEN Yiimp-kawpow-Install Script by Afiniel.	   $COL_RESET"
-    echo -e "$GREEN Finish! Sussessfully installation 		   $COL_RESET"
-    echo -e ""
-    echo -e "$CYAN Whew that was fun, just some reminders.      $COL_RESET" 
-    echo -e "$RED Your mysql information is saved in ~/.my.cnf. $COL_RESET"
-    echo -e "$GREEN********************************************$COL_RESET"
-    echo -e "$RED yiimp at : http://"$server_name" (https... if SSL enabled)"
-    echo -e "$RED yiimp Admin at : http://"$server_name"/site/AdminPanel (https... if SSL enabled)"
-    echo -e "$RED yiimp phpMyAdmin at : http://"$server_name"/phpmyadmin (https... if SSL enabled)"
+	echo -e "$CYAN  *************************************************************************** $COL_RESET"
+    echo -e "$GREEN Yiimp-kawpow-Install Script by Afiniel. Wanna help me out? feel free to,	$COL_RESET"
+    echo -e "$GREEN	Donate to the wallet bellow. 												$COL_RESET"
+    echo -e "$GREEN -----------------------------------------------								$COL_RESET"
+    echo -e "$CYAN  BTC: bc1q338jnjdl6dky7ka88ln8qmcekal48uw072n9v9       						$COL_RESET"
+    echo -e "$GREEN -----------------------------------------------								$COL_RESET"
+    echo -e "$CYAN  LTC: LW4iFgCTQAVWoxe4VF7nFy2WLHdR6xNkjK										$COL_RESET"
+    echo -e "$GREEN -----------------------------------------------								$COL_RESET"
+    echo -e "$CYAN  DOGE: DSpy3taXqkbWSkhM4GMtsXftxyYHX2Gt3r									$COL_RESET"
+    echo -e "$GREEN -----------------------------------------------								$COL_RESET"
+    echo -e "$CYAN  *************************************************************************** $COL_RESET"
+	echo -e "$CYAN 	https://github.com/afiniel/yiimp-kawpow-installer				$COL_RESET"
+	echo -e "$GREEN *************************************************************************** $COL_RESET"
+    echo -e "$GREEN Finish! Sussessfully installationYiimp-kawpow-Install Script by Afiniel     $COL_RESET"
+    echo -e "$GREEN 		    																$COL_RESET"
+    echo -e "$CYAN  Whew that was fun, just some reminders.      								$COL_RESET" 
+    echo -e "$RED   Your mysql information is saved in ~/.my.cnf. 								$COL_RESET"
+    echo -e "$GREEN *************************************************************************** $COL_RESET"
+    echo -e "$RED   Your pool: http://"$server_name" (https... if SSL enabled)"
+    echo -e "$RED   yiimp"$admin_panel" at : http://"$server_name"/site/"$admin_panel" 			$COL_RESET"
+    echo -e "$RED   yiimp phpMyAdmin at : http://"$server_name"/phpmyadmin (https... if SSL enabled)"
+    echo -e "$GREEN *************************************************************************** $COL_RESET"
+    echo -e "$RED   If you want change 'AdminPanel' to access Panel Admin: 						$COL_RESET"
+    echo -e "$RED   /var/web/yaamp/modules/site/SiteController.php 								$COL_RESET"
+    echo -e "$RED   Line 11 => change 'AdminPanel' to your preferred Name. 						$COL_RESET"
     echo
-    echo -e "$RED If you want change 'AdminPanel' to access Panel Admin : Edit this file : /var/web/yaamp/modules/site/SiteController.php"
-    echo -e "$RED Line 11 => change 'AdminPanel' to your preferred Name."
-    echo
-    echo -e "$CYAN Please make sure to change your public keys / wallet addresses in the /var/web/serverconfig.php file. $COL_RESET"
-    echo -e "$CYAN Please make sure to change your private keys in the /etc/yiimp/keys.php file. $COL_RESET"
-    echo
-    echo -e "$RED***************************************************$COL_RESET"
-    echo -e "$RED YOU MUST REBOOT NOW  TO FINALIZE INSTALLATION !!! $COL_RESET"
-    echo -e "$RED***************************************************$COL_RESET"
-    echo -e "$GREEN 𝐻𝒶𝓅𝓅𝓎 𝑀𝒾𝓃𝒾𝓃𝑔!                                $COL_RESET"
+    echo -e "$CYAN  Please make sure to change your public keys / wallet addresses in the, 		 $COL_RESET"
+    echo -e "$RED   /var/web/serverconfig.php file. 											 $COL_RESET"
+    echo -e "$CYAN  Please make sure to change your private keys in the /etc/yiimp/keys.php file.$COL_RESET"
+    echo -e "$GREEN ***************************************************************************  $COL_RESET"
+
+    echo -e "$RED   ***************************************************************************  $COL_RESET"
+    echo -e "$RED   YOU MUST REBOOT NOW  TO FINALIZE INSTALLATION Thanks you!					 $COL_RESET"
+    echo -e "$RED   ***************************************************************************  $COL_RESET"
+    echo -e "$GREEN 𝐻𝒶𝓅𝓅𝓎 𝑀𝒾𝓃𝒾𝓃𝑔! 							                                 $COL_RESET"
     echo
 }
 
@@ -126,10 +145,8 @@ function import_SQL_schemas {
 	echo
 	sudo zcat 2020-11-10-yaamp.sql.gz | sudo mysql --defaults-group-suffix=host1
 	echo
-    sudo mysql --defaults-group-suffix=host1 --force < 2015-09-20-blocks_worker.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2016-02-17-payouts_errmsg.sql
+    
     sudo mysql --defaults-group-suffix=host1 --force < 2016-02-18-accounts_donation.sql
-    sudo mysql --defaults-group-suffix=host1 --force < 2016-02-23-shares_diff.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2016-03-30-coins.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2016-04-24-market_history.sql
     sudo mysql --defaults-group-suffix=host1 --force < 2016-04-27-settings.sql
