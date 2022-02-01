@@ -56,3 +56,8 @@ If you have issue after installation (nginx,mariadb... not found), use this scri
 It is every server owners responsibility to fully secure their own servers. After the installation you will still need to customize your serverconfig.php file to your liking, add your API keys, and build/add your coins to the control panel. 
 
 # Happy Mining‼️
+Yiimp-kawpow-Install Script by Afiniel. Wanna help me out? Feel free to Thanks for!
+
+BTC: bc1q338jnjdl6dky7ka88ln8qmcekal48uw072n9v9
+LTC: LW4iFgCTQAVWoxe4VF7nFy2WLHdR6xNkjK
+DOGE: DSpy3taXqkbWSkhM4GMtsXftxyYHX2Gt3r
