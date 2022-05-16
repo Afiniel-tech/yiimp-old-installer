@@ -18,7 +18,7 @@ Connect on your VPS =>
 - log back in
 - su - pool
 - sudo apt -y install git
-- git clone https://github.com/afiniel/yiimp-kawpow-installer.git
+- git clone https://github.com/Afiniel-tech/yiimp-old-installer.git
 - cd  Yiimp-kawpow-installer
 - bash install.sh (Remember to be on your pool user Beforce you do Bash install.sh)
 - At the end, you MUST REBOOT to finalize installation...
