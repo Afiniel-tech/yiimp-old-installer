@@ -92,7 +92,7 @@
     sleep 3
     
     if [ -f /usr/sbin/apache2 ]; then
-    echo -e " Apache2 active Removing..."
+    echo -e "$RED Apache2 active Removing... $COL_RESET"
     hide_output apt-get -y purge apache2 apache2-*
     hide_output apt-get -y --purge autoremove
     fi
@@ -140,7 +140,7 @@
     echo -e "$GREEN Sussess!$COL_RESET"
 
     
-    # Installing Installing php7.3
+    # Installing php7.3
     echo
     echo
     echo -e "$CYAN => Installing php7.3 : $COL_RESET"
@@ -261,7 +261,7 @@
     echo
     echo -e "$CYAN => Installing yiimp $COL_RESET"
     echo
-    echo -e "$GREEN Grabbing yiimp fron Github, building files and setting file structure.$COL_RESET"
+    echo -e "$YELLOW Grabbing yiimp fron Github, building files and setting file structure.$COL_RESET"
     echo
     sleep 3
     
@@ -271,7 +271,7 @@
     
     # Compile Blocknotify
     cd ~
-    hide_output git clone https://github.com/afiniel/yiimp.git -b kawpow-afiniel
+    hide_output git clone https://github.com/Afiniel-tech/yiimp.git -b multi-port
     cd $HOME/yiimp/blocknotify
     echo
     hide_output sudo make
@@ -335,15 +335,7 @@
     hide_output sudo systemctl restart rsyslog
     fi
     hide_output sudo systemctl status rsyslog | sed -n "1,3p"
-    echo
-    echo -e "$GREEN Done...$COL_RESET"
-    
-    
-    # Creating webserver initial config file
-    echo
-    echo
-    echo -e "$CYAN => Creating webserver initial config file $COL_RESET"
-    echo
+    echoimp-kawpow-Install Script by Afiniel
     
     # Adding user to group, creating dir structure, setting permissions
     sudo mkdir -p /var/www/$server_name/html
@@ -401,15 +393,7 @@
         location ~ \.php$ {
             return 404;
         }
-        location ~ \.sh {
-        return 404;
-        }
-        location ~ /\.ht {
-        deny all;
-        }
-        location ~ /.well-known {
-        allow all;
-        }
+        location ~ \.sh {imp-kawpow-Install Script by Afiniel
         location /phpmyadmin {
         root /usr/share/;
         index index.php;
@@ -571,17 +555,7 @@
         listen [::]:80;
         server_name '"${server_name}"' www.'"${server_name}"';
         root "/var/www/'"${server_name}"'/html/web";
-        index index.html index.htm index.php;
-        charset utf-8;
-    
-        location / {
-        try_files $uri $uri/ /index.php?$args;
-        }
-        location @rewrite {
-        rewrite ^/(.*)$ /index.php?r=$1;
-        }
-    
-        location = /favicon.ico { access_log off; log_not_found off; }
+        index index.html index.htm index.php;imp-kawpow-Install Script by Afinielg_not_found off; }
         location = /robots.txt  { access_log off; log_not_found off; }
     
         access_log /var/log/nginx/'"${server_name}"'.app-access.log;

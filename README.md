@@ -1,4 +1,4 @@
-# Yiimp-kawpow-Install Script by Afiniel (update dec 2022-01-31)
+# Yiimp Install Script by Afiniel (update dec 2022-05-16)
 
 Need Help? join us <a href="https://discord.gg/GVZ4tchkKc"><img src="https://img.shields.io/discord/904564600354254898.svg?style=flat&label=Discord %3C3%20&color=7289DA%22" alt="Join Community Badge"/></a>
 
