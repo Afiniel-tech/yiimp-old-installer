@@ -271,7 +271,7 @@
     
     # Compile Blocknotify
     cd ~
-    hide_output git clone https://github.com/Afiniel-tech/yiimp.git -b multi-port
+    hide_output git clone https://github.com/Kudaraidee/yiimp.git -b next
     cd $HOME/yiimp/blocknotify
     echo
     hide_output sudo make
@@ -335,7 +335,7 @@
     hide_output sudo systemctl restart rsyslog
     fi
     hide_output sudo systemctl status rsyslog | sed -n "1,3p"
-    echoimp-kawpow-Install Script by Afiniel
+    
     
     # Adding user to group, creating dir structure, setting permissions
     sudo mkdir -p /var/www/$server_name/html
@@ -820,7 +820,7 @@
     echo -e "$GREEN Sussess!$COL_RESET"
 
  
-    # Peforming the SQL import
+    # Peforming the SQL import into the database.
     import_SQL_schemas
     
     # Generating a basic yiimp serverconfig.php
